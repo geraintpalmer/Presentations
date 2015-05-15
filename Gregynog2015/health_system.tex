@@ -1,0 +1,54 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+% Nodes
+\draw (0, 20) -- (32, 20) -- (32, 18) -- (0, 18) -- cycle; % Home / Primary Care
+\node at (15, 19) {\LARGE{Home / Primary Care}};
+\draw (0, 16) -- (5, 16) -- (5, 13) -- (0, 13) -- cycle; % EMS
+\node at (2.5, 14.5) {\LARGE{EMS}};
+\draw (7, 16) -- (12, 16) -- (12, 13) -- (7, 13) -- cycle; % A&E
+\node at (9.5, 14.5) {\LARGE{A\&E}};
+\draw (14, 16) -- (19, 16) -- (19, 13) -- (14, 13) -- cycle; % Acute
+\node at (16.5, 14.5) {\LARGE{Acute}};
+\draw (21, 16) -- (28, 16) -- (28, 13) -- (21, 13) -- cycle; % Community / Social Care
+\node[text width=200] at (24.8, 14.5) {\LARGE{Community \& Social Care}};
+\draw (16, 11) -- (23, 11) -- (23, 8) -- (16, 8) -- cycle; % Community Hospital
+\node[text width=200] at (20.3, 9.5) {\LARGE{Community Hospitals}};
+\draw (25, 11) -- (30, 11) -- (30, 8) -- (25, 8) -- cycle; % Nursing Homes
+\node[text width=4.7] at (26.5, 9.5) {\LARGE{Nursing Homes}};
+
+% Arrows
+\draw[ultra thick, -triangle 90] (2, 16) -- (2, 18); % EMS -> Primary
+\draw[ultra thick, -triangle 90] (3, 18) -- (3, 16); % Primary -> EMS
+\draw[ultra thick, -triangle 90] (9, 16) -- (9, 18); % A&E -> Primary
+\draw[ultra thick, -triangle 90] (10, 18) -- (10, 16); % Primary -> A&E
+\draw[ultra thick, -triangle 90] (16, 16) -- (16, 18); % Acute -> Primary
+\draw[ultra thick, -triangle 90] (17, 18) -- (17, 16); % Primary -> Acute
+\draw[ultra thick, -triangle 90] (23, 16) -- (23, 18); % Community Care -> Primary
+\draw[ultra thick, -triangle 90] (24, 18) -- (24, 16); % Primary -> Community Care
+\draw[ultra thick, -triangle 90] (17, 11) -- (17, 13); % Community Hospital -> Acute
+\draw[ultra thick, -triangle 90] (18, 13) -- (18, 11); % Acute -> Community Hospital
+\draw[ultra thick, -triangle 90] (22, 11) -- (22, 13); % Community Hospital -> Community Care
+\draw[ultra thick, -triangle 90] (26.5, 13) -- (26.5, 11); % Community Care-> Nursing Homes
+
+\draw[ultra thick, -triangle 90] (5, 14.5) -- (7, 14.5); % EMS -> A&E
+\draw[ultra thick, -triangle 90] (12, 14.5) -- (14, 14.5); % A&E -> Acute
+\draw[ultra thick, -triangle 90] (19, 14.5) -- (21, 14.5); % Acute- > Community Care
+\draw[ultra thick, -triangle 90] (23, 9.5) -- (25, 9.5); % Community Hospital- > Nursing Care
+
+\draw[ultra thick, -triangle 90] (30, 9.5) -- (31, 9.5) -- (31, 18); % Nursing Haomes - > Primary
+\draw[ultra thick, -triangle 90] (15, 13) -- (15, 6.5) -- (27.5, 6.5) -- (27.5, 8); % Acute- > Nursing Home
+
+
+
+
+\end{tikzpicture}
+
+\end{document}
