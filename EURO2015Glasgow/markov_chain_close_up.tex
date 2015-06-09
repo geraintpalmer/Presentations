@@ -1,0 +1,40 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes,snakes}
+
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\node[align=center] (center) [style={minimum height=2cm, minimum width=6cm, draw=black,fill=yellow!30,text=black,shape=ellipse}] at (0, 0) {\huge{$(i, j)$}};
+\node[align=center] (top) [style={minimum height=2cm, minimum width=6cm, draw=black,fill=yellow!30,text=black,shape=ellipse}] at (0, 5) {\huge{$(i-1, j)$}};
+\node[align=center] (bottom) [style={minimum height=2cm, minimum width=6cm, draw=black,fill=yellow!30,text=black,shape=ellipse}] at (0, -5) {\huge{$(i+1, j)$}};
+\node[align=center] (left) [style={minimum height=2cm, minimum width=6cm, draw=black,fill=yellow!30,text=black,shape=ellipse}] at (-8, 0) {\huge{$(i, j-1)$}};
+\node[align=center] (right) [style={minimum height=2cm, minimum width=6cm, draw=black,fill=yellow!30,text=black,shape=ellipse}] at (8, 0) {\huge{$(i, j+1)$}};
+\node[align=center] (diagonal) [style={minimum height=2cm, minimum width=6cm, draw=black,fill=yellow!30,text=black,shape=ellipse}] at (8, 5) {\huge{$(i-1, j+1)$}};
+
+
+\draw (center) edge[out=-45,in=45,-triangle 90,ultra thick] node [below] {Arrival at 1} (bottom);
+\draw (bottom) edge[out=135,in=-135,-triangle 90,ultra thick] node [above] {Service at 1, then leave} (center);
+
+% \draw (center) edge[out=45,in=-45,-triangle 90,ultra thick] node [below] {Arrival at 1} (bottom);
+% \draw (center) edge[out=-45,in=45,-triangle 90,ultra thick] node [below] {Arrival at 1} (bottom);
+%
+% \draw (center) edge[out=135,in=45,-triangle 90,ultra thick] node [below] {Arrival at 1} (bottom);
+% \draw (center) edge[out=135,in=45,-triangle 90,ultra thick] node [below] {Arrival at 1} (bottom);
+%
+% \draw (center) edge[out=135,in=45,-triangle 90,ultra thick] node [below] {Arrival at 1} (bottom);
+% \draw (center) edge[out=135,in=45,-triangle 90,ultra thick] node [below] {Arrival at 1} (bottom);
+%
+% \draw (center) edge[out=135,in=45,-triangle 90,ultra thick] node [below] {Arrival at 1} (bottom);
+% \draw (center) edge[out=135,in=45,-triangle 90,ultra thick] node [below] {Arrival at 1} (bottom);
+
+
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,149 @@
+\documentclass{standalone}
+% \documentclass{article}
+
+\usepackage{tikz}
+green!70!black
+\begin{document}
+\begin{tikzpicture}
+\onslide<1,5>{
+  % Queue A
+  \draw (0, 0) -- (8, 0);
+  \draw (8, 0) -- (8, 3);
+  \draw (0, 3) -- (8, 3);
+  \draw (4, 0) -- (4, 3);
+  \draw (5, 0) -- (5, 3);
+  \draw (6, 0) -- (6, 3);
+  \draw (7, 0) -- (7, 3);
+  \draw (0, 0) -- (0, 3);
+
+  \node at (3, 1.5) {\LARGE{$n_1$}};
+
+  % Service center a
+  \draw (10, 1.5) circle (1.5) node {\LARGE{$\mu_1$}};
+
+  % Queue B
+  \draw (7, 6) -- (7, 9);
+  \draw (7, 6) -- (15, 6);
+  \draw (7, 9) -- (15, 9);
+  \draw (8, 6) -- (8, 9);
+  \draw (9, 6) -- (9, 9);
+  \draw (10, 6) -- (10, 9);
+  \draw (11, 6) -- (11, 9);
+  \draw (15, 6) -- (15, 9);
+
+  \node at (12, 7.5) {\LARGE{$n_2$}};
+
+  % Service center B
+  \draw (5, 7.5) circle (1.5) node {\LARGE{$\mu_2$}};
+
+  % % In and out routes
+  \draw[thick, -triangle 90] (11.5, 1.5) -- (20, 1.5);
+  \draw[thick, -triangle 90] (3.5, 7.5) -- (-5, 7.5);
+  \draw[thick, -triangle 90] (-5, 1.5) -- (0, 1.5) node [pos=0, left] {\LARGE{$\Lambda_1$}};
+  \draw[thick, -triangle 90] (20, 7.5) -- (15, 7.5) node [pos=0, right] {\LARGE{$\Lambda_2$}};
+
+  % Routing between nodes
+  \draw[thick, -triangle 90] (17, 1.5) -- (17, 7.5) node [pos=0.5, left] {\LARGE{$r_{12}$}};
+  \draw[thick, -triangle 90] (-2, 7.5) -- (-2, 1.5) node [pos=0.5, left] {\LARGE{$r_{21}$}};
+
+  % Self loop
+  \draw[thick, -triangle 90] (-2, 7.5) -- (-2, 10.5) -- (17, 10.5) -- (17, 7.5) node [pos=0.5, left] {\LARGE{$r_{22}$}};
+  \draw[thick, -triangle 90] (17, 1.5) -- (17, -1.5) -- (-2, -1.5) -- (-2, 1.5) node [pos=0.5, left] {\LARGE{$r_{11}$}};
+}
+  \onslide<2>{
+  % Queue A
+  \draw[green!70!black] (0, 0) -- (8, 0);
+  \draw[green!70!black] (8, 0) -- (8, 3);
+  \draw[green!70!black] (0, 3) -- (8, 3);
+  \draw[green!70!black] (4, 0) -- (4, 3);
+  \draw[green!70!black] (5, 0) -- (5, 3);
+  \draw[green!70!black] (6, 0) -- (6, 3);
+  \draw[green!70!black] (7, 0) -- (7, 3);
+  \draw[green!70!black] (0, 0) -- (0, 3);
+
+  \node at (3, 1.5) {\textcolor{green!70!black}{\LARGE{$n_1$}}};
+  \draw[draw=green!70!black] (10, 1.5) circle (1.5) node {\textcolor{green!70!black}{\LARGE{$\mu_1$}}};
+
+  \draw[green!70!black, thick, -triangle 90] (11.5, 1.5) -- (20, 1.5);
+  \draw[green!70!black, thick, -triangle 90] (-5, 1.5) -- (0, 1.5) node [pos=0, left] {\LARGE{$\Lambda_1$}};
+  \draw[green!70!black, thick, -triangle 90] (17, 1.5) -- (17, -1.5) -- (-2, -1.5) -- (-2, 1.5) node [pos=0.5, left] {\LARGE{$r_{11}$}};
+  }
+
+  \onslide<3>{
+  \draw[blue] (7, 6) -- (7, 9);
+  \draw[blue] (7, 6) -- (15, 6);
+  \draw[blue] (7, 9) -- (15, 9);
+  \draw[blue] (8, 6) -- (8, 9);
+  \draw[blue] (9, 6) -- (9, 9);
+  \draw[blue] (10, 6) -- (10, 9);
+  \draw[blue] (11, 6) -- (11, 9);
+  \draw[blue] (15, 6) -- (15, 9);
+
+  \node at (12, 7.5) {\textcolor{blue}{\LARGE{$n_2$}}};
+  \draw[blue] (5, 7.5) circle (1.5) node {\textcolor{blue}{\LARGE{$\mu_2$}}};
+
+  \draw[blue, thick, -triangle 90] (3.5, 7.5) -- (-5, 7.5);
+  \draw[blue, thick, -triangle 90] (20, 7.5) -- (15, 7.5) node [pos=0, right] {\LARGE{$\Lambda_2$}};
+  \draw[blue, thick, -triangle 90] (-2, 7.5) -- (-2, 10.5) -- (17, 10.5) -- (17, 7.5) node [pos=0.5, left] {\LARGE{$r_{22}$}};
+  }
+
+  \onslide<4>{
+  % Queue A
+  \draw[red] (0, 0) -- (8, 0);
+  \draw[red] (8, 0) -- (8, 3);
+  \draw[red] (0, 3) -- (8, 3);
+  \draw[red] (4, 0) -- (4, 3);
+  \draw[red] (5, 0) -- (5, 3);
+  \draw[red] (6, 0) -- (6, 3);
+  \draw[red] (7, 0) -- (7, 3);
+  \draw[red] (0, 0) -- (0, 3);
+
+  \node at (3, 1.5) {\textcolor{red}{\LARGE{$n_1$}}};
+
+  % Service center a
+  \draw[red] (10, 1.5) circle (1.5) node {\textcolor{red}{\LARGE{$\mu_1$}}};
+
+  % Queue B
+  \draw[red] (7, 6) -- (7, 9);
+  \draw[red] (7, 6) -- (15, 6);
+  \draw[red] (7, 9) -- (15, 9);
+  \draw[red] (8, 6) -- (8, 9);
+  \draw[red] (9, 6) -- (9, 9);
+  \draw[red] (10, 6) -- (10, 9);
+  \draw[red] (11, 6) -- (11, 9);
+  \draw[red] (15, 6) -- (15, 9);
+
+  \node at (12, 7.5) {\textcolor{red}{\LARGE{$n_2$}}};
+
+  % Service center B
+  \draw[red] (5, 7.5) circle (1.5) node {\textcolor{red}{\LARGE{$\mu_2$}}};
+
+  % % In and out routes
+  \draw[red, thick, -triangle 90] (11.5, 1.5) -- (20, 1.5);
+  \draw[red, thick, -triangle 90] (3.5, 7.5) -- (-5, 7.5);
+  \draw[red, thick, -triangle 90] (-5, 1.5) -- (0, 1.5) node [pos=0, left] {\LARGE{$\Lambda_1$}};
+  \draw[red, thick, -triangle 90] (20, 7.5) -- (15, 7.5) node [pos=0, right] {\LARGE{$\Lambda_2$}};
+  % Routing between nodes
+  \draw[red, thick, -triangle 90] (17, 1.5) -- (17, 7.5) node [pos=0.5, left] {\LARGE{$r_{12}$}};
+  \draw[red, thick, -triangle 90] (-2, 7.5) -- (-2, 1.5) node [pos=0.5, left] {\LARGE{$r_{21}$}};
+  }
+
+  \onslide<2->{
+  \node at (5.5, -5) {\textcolor{green!70!black}{\Huge{$Q_1$}}};
+  }
+  \onslide<3->{
+  \node at (7.5, -5) {\textcolor{blue}{\Huge{$Q_2$}}};
+  }
+  \onslide<4->{
+  \node at (9.5, -5) {\textcolor{red}{\Huge{$Q_3$}}};
+  }
+  \onslide<5->{
+  \node at (6.1, -5.2) {\Huge{,}};
+  \node at (8.1, -5.2) {\Huge{,}};
+  \node at (10.5, -5) {\Huge{)}};
+  \node at (3.5, -5) {\Huge{\textbf{Q} = f(}};
+  }
+
+\end{tikzpicture}
+
+\end{document}
