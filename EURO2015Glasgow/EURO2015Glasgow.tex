@@ -62,15 +62,6 @@
     \includestandalone[width=\textwidth]{end_product_results}
 \end{frame}
 
-% % Contents
-% \begin{frame}
-%     \begin{itemize}
-%         \item Queueing Networks
-%         \item Deadlock
-%         \item Reinforcement Learning
-%     \end{itemize}
-% \end{frame}
-
 
 % QUEUEING NETWORKS
 
@@ -121,8 +112,72 @@
     \end{figure}
 \end{frame}
 
+% Markovian deadlock model 1 Node
+\begin{frame}
+    \frametitle{Markovian Model of Deadlock}
+    \includestandalone[width=\textwidth]{1nodeexample}\newline
+    \center{\LARGE{$(i)$}}
+\end{frame}
 
-% Markov deadlock model
+
+\begin{frame}
+%\frametitle{Markovian Model of Deadlock}
+\center
+\scriptsize \[S = \{i\in\mathbb{N}| 0 \leq i \leq n + 1\}\cup\{-1\}\]
+Define $\delta = i_2 - i_1$\newline
+
+\vspace{6 mm}
+
+  $q_{i_1, i_2} = \left\{
+  \begin{matrix*}[ r ]
+    \left. \color{red} \begin{matrix*}[ r ]
+      \Lambda & \text{if } i < n + 1 \\
+      0 & \text{otherwise}
+    \end{matrix*} \right\} & \color{red} \text{if } \delta = 1 \\
+    \color{blue} (1 - r_{11})\mu & \color{blue} \text{if } \delta = -1 \\
+    \color{blue} 0 & \color{blue} \text{otherwise}
+  \end{matrix*} \right.$
+\vspace{6 mm}
+
+$q_{i, -1} = \left\{ \color{darkgreen}
+  \begin{matrix*}[ r ]
+    r_{11}\mu & \text{if } i = n + 1) \\
+    0 & \text{otherwise}
+  \end{matrix*}
+  \right.$
+
+\vspace{6 mm}
+
+$q_{-1, s} = 0$
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+    \includestandalone[width=0.95\textwidth]{markov_chain_1node}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Times to Deadlock - $\Lambda$}
+    \includegraphics[width=\textwidth]{varyL1_1node}
+\end{frame}
+\begin{frame}
+    \frametitle{Times to Deadlock - $\mu$}
+    \includegraphics[width=\textwidth]{varymu1_1node}
+\end{frame}
+\begin{frame}
+    \frametitle{Times to Deadlock - $r_{11}$}
+    \includegraphics[width=\textwidth]{varyr11_1node}
+\end{frame}
+\begin{frame}
+    \frametitle{Times to Deadlock - $n$}
+    \includegraphics[width=\textwidth]{varyn1_1node}
+\end{frame}
+
+
+
+
+% Markov deadlock model 2 Node
 \begin{frame}
     \frametitle{Markovian Model of Deadlock}
     \includestandalone[width=\textwidth]{2nodeexample}\newline
@@ -182,20 +237,11 @@ $q_{-1, s} = 0$
 \end{frame}
 
 \begin{frame}
-    \frametitle{Times to Deadlock - $\Lambda_1$}
-    \includegraphics[width=\textwidth]{varyL1}
-\end{frame}
-\begin{frame}
-    \frametitle{Times to Deadlock - $\mu_1$}
-    \includegraphics[width=\textwidth]{varymu1}
-\end{frame}
-\begin{frame}
-    \frametitle{Times to Deadlock - $r_{12}$}
-    \includegraphics[width=\textwidth]{varyr12}
-\end{frame}
-\begin{frame}
-    \frametitle{Times to Deadlock - $n_1$}
-    \includegraphics[width=\textwidth]{varyn1}
+    \frametitle{Times to Deadlock}
+    \includegraphics[width=0.5\textwidth]{varyL1}
+    \includegraphics[width=0.5\textwidth]{varymu1}\newline
+    \includegraphics[width=0.5\textwidth]{varyr12}
+    \includegraphics[width=0.5\textwidth]{varyn1}
 \end{frame}
 
 
