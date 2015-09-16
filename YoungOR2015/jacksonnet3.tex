@@ -1,0 +1,81 @@
+\documentclass{standalone}
+% \documentclass{article}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+  % Queue A
+  \draw[white] (0, 0) -- (4, 0);
+  \draw[white] (4, 0) -- (4, 1.5);
+  \draw[white] (0, 1.5) -- (4, 1.5);
+  \draw[white] (2, 0) -- (2, 1.5);
+  \draw[white] (2.5, 0) -- (2.5, 1.5);
+  \draw[white] (3, 0) -- (3, 1.5);
+  \draw[white] (3.5, 0) -- (3.5, 1.5);
+
+
+  % Service center A
+  \draw[white] (5, 0.75) circle (0.75);
+  \node[white] at (5, 0.5) {\large{$\mu_1$}};
+  \node[white] at (5, 1) {\large{$c_1$}};
+
+  % Queue B
+  \draw (7.5, 1.75) -- (11.5, 1.75);
+  \draw (11.5, 1.75) -- (11.5, 3.25);
+  \draw (7.5, 3.25) -- (11.5, 3.25);
+  \draw (9.5, 1.75) -- (9.5, 3.25);
+  \draw (10, 1.75) -- (10, 3.25);
+  \draw (10.5, 1.75) -- (10.5, 3.25);
+  \draw (11, 1.75) -- (11, 3.25);
+
+
+
+  % Service center B
+  \draw (12.5, 2.5) circle (0.75);
+  \node at (12.5, 2.25) {\large{$\mu_2$}};
+  \node at (12.5, 2.75) {\large{$c_2$}};
+
+
+  % Queue C
+  \draw[white] (7.5, -1.75) -- (11.5, -1.75);
+  \draw[white] (11.5, -1.75) -- (11.5, -0.25);
+  \draw[white] (7.5, -0.25) -- (11.5, -0.25);
+  \draw[white] (9.5, -1.75) -- (9.5, -0.25);
+  \draw[white] (10, -1.75) -- (10, -0.25);
+  \draw[white] (10.5, -1.75) -- (10.5, -0.25);
+  \draw[white] (11, -1.75) -- (11, -0.25);
+
+
+  % Service center C
+  \draw[white] (12.5, -1) circle (0.75);
+  \node[white] at (12.5, -1.25) {\large{$\mu_3$}};
+  \node[white] at (12.5, -0.75) {\large{$c_3$}};
+
+  % Routes
+  \draw[white, thick, -triangle 90] (-1.5, 0.75) -- (0.25, 0.75) node [pos=0, left] {\large{$\Lambda_1$}}; % Into A
+  \draw[white, thick, -triangle 90] (5.75, 0.75) -- (14.75, 0.75); % Out of A
+  \draw[thick, -triangle 90] (6.5, 2.5) -- (7.75, 2.5); % Half into B
+  \draw[white, thick, -triangle 90] (6.5, -1) -- (7.75, -1); % Half into C
+  \draw[white, thick, -triangle 90] (6.5, 4.5) -- (6.5, 2.5) node [pos=0, above] {\large{$\Lambda_2$}}; % Into B
+  \draw[white, thick, -triangle 90] (6.5, -3) -- (6.5, -1) node [pos=0, below] {\large{$\Lambda_3$}}; % Into C
+  \draw[thick, -triangle 90] (13.25, 2.5) -- (14.75, 2.5); % Out of B
+  \draw[white, thick, -triangle 90] (13.25, -1) -- (14.75, -1); % Out of C
+  \draw[white, thick, -triangle 90] (6.5, 0.75) -- (6.5, 2.5) node [pos=0.5, left] {\large{$r_{12}$}}; % A to B
+  \draw[white, thick, -triangle 90] (6.5, 0.75) -- (6.5, -1) node [pos=0.5, left] {\large{$r_{13}$}}; % A to C
+
+  % Names
+  \node[white] at (2, 2) {\Large{\textit{Community Hospital}}};
+  \node at (9.5, 3.75) {\Large{\textit{Community Care}}};
+  \node[white] at (9.5, 0.25) {\Large{\textit{Nursing Homes}}};
+
+  Extras
+  \node[red] at (6.25, 2.5) {\Large{$\lambda_2$}};
+
+  \node at (1, 2.5) {\huge{$\lambda_i = \Lambda_i + \sum_j r_{ji} \lambda_j$}};
+  \node at (6, -1.5) {\huge{$P(k_1, k_2, \dotsc, k_M) = \prod_{i=1}^M P_i(k_i)$}};
+
+\end{tikzpicture}
+
+\end{document}

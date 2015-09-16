@@ -1,0 +1,75 @@
+\documentclass{standalone}
+% \documentclass{article}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+  % Queue A
+  \draw[lightgray] (0, 0) -- (8, 0);
+  \draw[lightgray] (8, 0) -- (8, 3);
+  \draw[lightgray] (0, 3) -- (8, 3);
+  \draw[lightgray] (4, 0) -- (4, 3);
+  \draw[lightgray] (5, 0) -- (5, 3);
+  \draw[lightgray] (6, 0) -- (6, 3);
+  \draw[lightgray] (7, 0) -- (7, 3);
+
+
+  % Service center A
+  \draw[lightgray] (10, 1.5) circle (1.5);
+  \node[lightgray] at (10, 1) {\LARGE{$\mu_1$}};
+  \node[lightgray] at (10, 2) {\LARGE{$c_1$}};
+
+  % Queue B
+  \draw (15, 3.5) -- (23, 3.5);
+  \draw (23, 3.5) -- (23, 6.5);
+  \draw (15, 6.5) -- (23, 6.5);
+  \draw (19, 3.5) -- (19, 6.5);
+  \draw (20, 3.5) -- (20, 6.5);
+  \draw (21, 3.5) -- (21, 6.5);
+  \draw (22, 3.5) -- (22, 6.5);
+
+
+
+  % Service center B
+  \draw (25, 5) circle (1.5);
+  \node at (25, 4.5) {\LARGE{$\mu_2$}};
+  \node at (25, 5.5) {\LARGE{$c_2$}};
+
+
+  % Queue C
+  \draw[lightgray] (15, -3.5) -- (23, -3.5);
+  \draw[lightgray] (23, -3.5) -- (23, -0.5);
+  \draw[lightgray] (15, -0.5) -- (23, -0.5);
+  \draw[lightgray] (19, -3.5) -- (19, -0.5);
+  \draw[lightgray] (20, -3.5) -- (20, -0.5);
+  \draw[lightgray] (21, -3.5) -- (21, -0.5);
+  \draw[lightgray] (22, -3.5) -- (22, -0.5);
+
+
+  % Service center C
+  \draw[lightgray] (25, -2) circle (1.5);
+  \node[lightgray] at (25, -2.5) {\LARGE{$\mu_3$}};
+  \node[lightgray] at (25, -1.5) {\LARGE{$c_3$}};
+
+  % Routes
+  \draw[lightgray, thick, -triangle 90] (-3, 1.5) -- (0.5, 1.5) node [pos=0, left] {\LARGE{$\Lambda_1$}}; % Into A
+  \draw[lightgray, thick, -triangle 90] (11.5, 1.5) -- (29.5, 1.5); % Out of A
+  \draw[thick, -triangle 90] (13, 5) -- (15.5, 5); % Half into B
+  \draw[lightgray, thick, -triangle 90] (13, -2) -- (15.5, -2); % Half into C
+  \draw[lightgray, thick, -triangle 90] (13, 9) -- (13, 5) node [pos=0, above] {\LARGE{$\Lambda_2$}}; % Into B
+  \draw[lightgray, thick, -triangle 90] (13, -6) -- (13, -2) node [pos=0, below] {\LARGE{$\Lambda_3$}}; % Into C
+  \draw[thick, -triangle 90] (26.5, 5) -- (29.5, 5); % Out of B
+  \draw[lightgray, thick, -triangle 90] (26.5, -2) -- (29.5, -2); % Out of C
+  \draw[lightgray, thick, -triangle 90] (13, 1.5) -- (13, 5) node [pos=0.5, left] {\LARGE{$r_{12}$}}; % A to B
+  \draw[lightgray, thick, -triangle 90] (13, 1.5) -- (13, -2) node [pos=0.5, left] {\LARGE{$r_{13}$}}; % A to C
+
+  % Names
+  \node[lightgray] at (4, 4) {\Huge{\textit{Community Hospital}}};
+  \node at (19, 7.5) {\Huge{\textit{Community Care}}};
+  \node[lightgray] at (19, 0.5) {\Huge{\textit{Nursing Homes}}};
+
+\end{tikzpicture}
+
+\end{document}

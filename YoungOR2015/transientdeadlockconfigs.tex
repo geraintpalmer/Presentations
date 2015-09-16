@@ -1,0 +1,26 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usepackage{standalone}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\draw[draw=none] (-5, -5) -- (25, -5) -- (25, 25) -- (-5, 25) -- cycle;
+
+\node at (0, 0) {\includestandalone{deadlockcombinations/3node1a}};
+\node at (10, 0) {\includestandalone{deadlockcombinations/3node1b}};
+\node at (20, 0) {\includestandalone{deadlockcombinations/3node1c}};
+\node at (0, 10) {\includestandalone{deadlockcombinations/3node1ab}};
+\node at (10, 10) {\includestandalone{deadlockcombinations/3node1ac}};
+\node at (20, 10) {\includestandalone{deadlockcombinations/3node1bc}};
+\node at (0, 20) {\includestandalone{deadlockcombinations/3node2a_b}};
+\node at (10, 20) {\includestandalone{deadlockcombinations/3node2a_c}};
+\node at (20, 20) {\includestandalone{deadlockcombinations/3node2b_c}};
+
+\end{tikzpicture}
+
+\end{document}
