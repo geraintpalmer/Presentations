@@ -36,12 +36,12 @@
 % THE PROBLEM - HEALTH BOARD, WORKFORCE PLANNING ETC
 
 % 1st slide, health_system map
-\begin{frame}
-\frametitle{Aneurin Bevan University Health Board}
-\begin{figure}
-\includegraphics[width=0.7\textwidth]{Aneurin_Bevan}
-\end{figure}
-\end{frame}
+% \begin{frame}
+% \frametitle{Aneurin Bevan University Health Board}
+% \begin{figure}
+% \includegraphics[width=0.7\textwidth]{Aneurin_Bevan}
+% \end{figure}
+% \end{frame}
 
 
 % % 3rd slide, example final product
@@ -371,16 +371,14 @@ $q_{-1, s} = q_{-2, s} = q_{-3, s} = 0$
     \includestandalone[width=0.8\textwidth]{qlearn_flowchart}
     \end{figure}
     }
-    \only<3>{
-    Q-Learning
-    \begin{equation*}
-    Q(s, a) \leftarrow Q(s, a) + \alpha [ r + \gamma \text{max}_{a'} Q(s', a') - Q(s, a)]
-    \end{equation*}
-    }
 \end{frame}
 
 \begin{frame}
   \frametitle{Reinforcement Learning}
+
+    \begin{equation*}
+    Q(s, a) \leftarrow Q(s, a) + \alpha [ r + \gamma \text{max}_{a'} Q(s', a') - Q(s, a)]
+    \end{equation*}
 
   \begin{table}
 
