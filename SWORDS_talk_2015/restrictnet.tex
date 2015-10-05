@@ -1,0 +1,58 @@
+\documentclass{standalone}
+% \documentclass{article}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+  % Queue A
+  \draw (0, 0) -- (8, 0);
+  \draw (8, 0) -- (8, 3);
+  \draw (0, 3) -- (8, 3);
+  \draw (4, 0) -- (4, 3);
+  \draw (5, 0) -- (5, 3);
+  \draw (6, 0) -- (6, 3);
+  \draw (7, 0) -- (7, 3);
+
+
+  % Service center A
+  \draw (10, 1.5) circle (1.5);
+  \node at (10, 1) {\LARGE{$\mu_1$}};
+  \node at (10, 2) {\LARGE{$c_1$}};
+
+
+
+  % Queue B
+  \draw (18, 0) -- (22, 0);
+  \draw (22, 0) -- (22, 3);
+  \draw (18, 3) -- (22, 3);
+  \draw (18, 0) -- (18, 3);
+  \draw (19, 0) -- (19, 3);
+  \draw (20, 0) -- (20, 3);
+  \draw (21, 0) -- (21, 3);
+
+  % Service center B
+  \draw (24, 1.5) circle (1.5);
+  \node at (24, 1) {\LARGE{$\mu_2$}};
+  \node at (24, 2) {\LARGE{$c_2$}};
+
+ 
+
+  % Routes
+  \draw[thick, -triangle 90] (-3, 1.5) -- (0.5, 1.5) node [pos=0, left] {\LARGE{$\Lambda_1$}}; % Into A
+  \draw[thick, -triangle 90] (11.5, 1.5) -- (18, 1.5); % A to B
+  \draw[thick, -triangle 90] (25.5, 1.5) -- (28, 3); % out A top
+  \draw[thick, -triangle 90] (25.5, 1.5) -- (28, 1.5); % out A middle
+  \draw[thick, -triangle 90] (25.5, 1.5) -- (28, 0); % out A bottom
+  \draw[thick, -triangle 90] (13.75, 1.5) -- (13.75, 5); % out A
+  \draw[thick, -triangle 90] (15.75, -3) -- (15.75, 1.5) node [pos=0, below] {\LARGE{$\Lambda_2$}}; % into B
+  \node at (14.75, 2) {\LARGE{$r_{12}$}};
+
+  % Names
+  \node at (4, 4) {\Huge{\textit{EMS}}};
+  \node at (21, 4) {\Huge{\textit{A\&E}}};
+
+\end{tikzpicture}
+
+\end{document}

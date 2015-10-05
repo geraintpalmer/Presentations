@@ -1,0 +1,55 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usepackage{standalone}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\fill[fill=cyan!20, draw=black] (0, 0) rectangle (36, 24);
+\fill[fill=cyan!10, draw=black] (1, 9) rectangle (23, 23);
+\fill[fill=cyan!40, draw=black] (25, 5) rectangle (35, 7);
+\fill[fill=cyan!40, draw=black] (25, 9) rectangle (35, 11);
+\fill[fill=cyan!40, draw=black] (25, 13) rectangle (35, 15);
+\fill[fill=cyan!40, draw=black] (25, 17) rectangle (35, 19);
+
+\node at (30, 6) {\Huge{View Results}};
+\node at (30, 10) {\Huge{Run Simulation}};
+\node at (30, 14) {\Huge{Run Analysis}};
+\node at (30, 18) {\Huge{Upload Parameters}};
+
+\node (EMS) [style={minimum size=2.8cm,draw=black,fill=lime!50,text=black,shape=circle}] at (5.4, 16) {\LARGE{$EMS$}};
+\node (AandE) [style={minimum size=2.8cm,draw=black,fill=lime!50,text=black,shape=circle}] at (9.8, 20) {\LARGE{$A\&E$}};
+\node (Acute) [style={minimum size=2.8cm,draw=black,fill=lime!50,text=black,shape=circle}] at (14.2, 20) {\LARGE{$Acute$}};
+\node (CommandSocial) [style={minimum size=2.8cm,draw=black,fill=lime!50,text=black,shape=circle}] at (18.6, 16) {\LARGE{$Com/Soc$}};
+\node (CommHosp) [style={minimum size=2.8cm,draw=black,fill=lime!50,text=black,shape=circle}] at (9.3, 13) {\LARGE{$ComHosp$}};
+\node (Nursing) [style={minimum size=2.8cm,draw=black,fill=lime!50,text=black,shape=circle}] at (14.7, 12.5) {\LARGE{$Nursing$}};
+
+\draw[ultra thick, -triangle 90] (EMS) -- (AandE);
+\draw[ultra thick, -triangle 90] (AandE) -- (Acute);
+\draw[ultra thick, -triangle 90] (Acute) -- (CommandSocial);
+\draw[ultra thick, -triangle 90] (CommandSocial) -- (Nursing);
+\draw[ultra thick, -triangle 90] (CommHosp) -- (Nursing);
+\draw[ultra thick, -triangle 90] (CommHosp) -- (CommandSocial);
+\draw[ultra thick, -triangle 90] (CommHosp) -- (Acute);
+\draw[ultra thick, -triangle 90] (Acute) -- (CommHosp);
+\draw[ultra thick, -triangle 90] (Acute) -- (Nursing);
+
+\draw[ultra thick, -triangle 90] (EMS) -- (4, 18.4);
+\draw[ultra thick, -triangle 90] (2.4, 16.5) -- (EMS);
+\draw[ultra thick, -triangle 90] (AandE) -- (8.4, 22.5);
+\draw[ultra thick, -triangle 90] (11.2, 22.5) -- (AandE);
+\draw[ultra thick, -triangle 90] (Acute) -- (12.8, 22.5);
+\draw[ultra thick, -triangle 90] (15.6, 22.5) -- (Acute);
+\draw[ultra thick, -triangle 90] (CommandSocial) -- (20, 18.4);
+\draw[ultra thick, -triangle 90] (21.6, 16.5) -- (CommandSocial);
+\draw[ultra thick, -triangle 90] (Nursing) -- (16.7, 10.5);
+
+\node[align=left] at (6, 4.5) {\Huge{Nodes:}\\\\\\\LARGE{EMS -} \color{red}{\large{\textit{\textbf{EDIT}}}}\\\\\LARGE{A\&E -} \color{red}{\large{\textit{\textbf{EDIT}}}}\\\\\LARGE{Acute -} \color{red}{\large{\textit{\textbf{EDIT}}}}\\\\\LARGE{Community \& Social Care -} \color{red}{\large{\textit{\textbf{EDIT}}}}\\\\\LARGE{Community Hospital -} \color{red}{\large{\textit{\textbf{EDIT}}}}\\\\\LARGE{Nursing Homes -} \color{red}{\large{\textit{\textbf{EDIT}}}}};
+
+\end{tikzpicture}
+
+\end{document}

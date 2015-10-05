@@ -1,0 +1,26 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usepackage{standalone}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\fill[fill=cyan!20, draw=black] (0, 0) rectangle (36, 24);
+\node at (8, 22) {\Huge{\textbf{\textsc{Community \& Social Care}}}};
+\node at (27, 16) {\includegraphics[width=15cm]{barchart}};
+\draw (18, 22) -- (18, 1);
+
+\node[align=left] at (24, 6) {\huge Performance Measures:\\\\\Large Winter Expected Occupancy: \#\#\#\#\# \\\\\Large Spring Exprected Occupancy: \#\#\#\#\# \\\\\Large Summer Expected Occupancy: \#\#\#\#\# \\\\\Large Autumn Expected Occupancy: \#\#\#\#\#};
+\node[align=left] at (5, 12) {\LARGE Winter Workforce\\\LARGE Requirements:\\\\\large Skill 1: \#\#\#\#\# WTEs \\\\\large Skill 2: \#\#\#\#\# WTEs \\\\\large Skill 3: \#\#\#\#\# WTEs \\\\\large Skill 4: \#\#\#\#\# WTEs \\\\\large Skill 5: \#\#\#\#\# WTEs\\\\\\\\
+    \LARGE Spring Workforce\\ \LARGE Requirements:\\\\\large Skill 1: \#\#\#\#\# WTEs \\\\\large Skill 2: \#\#\#\#\# WTEs \\\\\large Skill 3: \#\#\#\#\# WTEs \\\\\large Skill 4: \#\#\#\#\# WTEs \\\\\large Skill 5: \#\#\#\#\# WTEs};
+
+\node[align=left] at (12, 12) {\LARGE Summer Workforce\\\LARGE Requirements:\\\\\large Skill 1: \#\#\#\#\# WTEs \\\\\large Skill 2: \#\#\#\#\# WTEs \\\\\large Skill 3: \#\#\#\#\# WTEs \\\\\large Skill 4: \#\#\#\#\# WTEs \\\\\large Skill 5: \#\#\#\#\# WTEs\\\\\\\\
+    \LARGE Autumn Workforce\\\LARGE Requirements:\\\\\large Skill 1: \#\#\#\#\# WTEs \\\\\large Skill 2: \#\#\#\#\# WTEs \\\\\large Skill 3: \#\#\#\#\# WTEs \\\\\large Skill 4: \#\#\#\#\# WTEs \\\\\large Skill 5: \#\#\#\#\# WTEs};
+
+\end{tikzpicture}
+
+\end{document}

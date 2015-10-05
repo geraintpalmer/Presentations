@@ -1,0 +1,28 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usepackage{standalone}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\node[align=center] (Learn) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (27.5, 10) {Learn};
+\node[align=center] (EndServ) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (24.045, 14.755) {End \\ Service};
+\node[align=center] (Choice) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (18.455, 12.939) {Routing \\ Choice};
+\node[align=center] (ObsState) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (18.455, 7.061) {Observe \\ State};
+\node[align=center] (Reward) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (24.045, 5.245) {Reward};
+
+\draw[ultra thick, -triangle 90] (EndServ) -- (Choice);
+\draw[ultra thick, -triangle 90] (ObsState) -- (Reward);
+\draw[ultra thick, -triangle 90] (Reward) -- (Learn);
+\draw[ultra thick, -triangle 90] (Learn) -- (EndServ);
+\draw[ultra thick, -triangle 90, dashed] (Choice) -- (ObsState);
+
+\draw (Learn) edge[out=180,in=0,->,thick,dashed,gray] (Choice);
+
+\end{tikzpicture}
+
+\end{document}
