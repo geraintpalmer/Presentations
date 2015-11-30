@@ -1,0 +1,71 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usepackage{standalone}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+
+\node[align=center, opacity=0.2] (AA) [style={minimum height=0.8cm, minimum width=1.6cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (0, -3) {\large AA};
+
+\node[align=center, opacity=0.2] (AB) [style={minimum height=0.8cm, minimum width=1.6cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (-1.9284, -2.2981) {\large AB};
+
+\node[align=center] (AC) [style={minimum height=0.8cm, minimum width=1.6cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (-2.9544, -0.5209) {\large AC};
+
+\node[align=center, opacity=0.2] (BA) [style={minimum height=0.8cm, minimum width=1.6cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (-2.5981, 1.5) {\large BA};
+
+\node[align=center, opacity=0.2] (BB) [style={minimum height=0.8cm, minimum width=1.6cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (-1.0261, 2.8191) {\large BB};
+
+\node[align=center, opacity=0.2] (BC) [style={minimum height=0.8cm, minimum width=1.6cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (1.0261, 2.8191) {\large BC};
+
+\node[align=center] (CA) [style={minimum height=0.8cm, minimum width=1.6cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (2.5981, 1.5) {\large CA};
+
+\node[align=center] (CB) [style={minimum height=0.8cm, minimum width=1.6cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (2.9544, -0.5209) {\large CB};
+
+\node[align=center] (CC) [style={minimum height=0.8cm, minimum width=1.6cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (1.9284, -2.2981) {\large CC};
+
+
+
+
+
+
+
+
+
+\draw[thick, draw=gray!25, -triangle 90] (AA) -- (AB);
+\draw[thick, draw=gray!25, -triangle 90] (AA) -- (AC);
+\draw[thick, draw=gray!25, -triangle 90] (AB) -- (BA);
+\draw[thick, draw=gray!25, -triangle 90] (AB) -- (BB);
+\draw[thick, draw=gray!25, -triangle 90] (AB) -- (BC);
+\draw[thick, draw=gray!25, -triangle 90] (BA) -- (AA);
+\draw[thick, draw=gray!25, -triangle 90] (BA) -- (AB);
+\draw[thick, draw=gray!25, -triangle 90] (BA) -- (AC);
+\draw[thick, draw=gray!25, -triangle 90] (BB) -- (BA);
+\draw[thick, draw=gray!25, -triangle 90] (BB) -- (BC);
+\draw[thick, draw=gray!25, -triangle 90] (BC) -- (CA);
+\draw[thick, draw=gray!25, -triangle 90] (BC) -- (CB);
+\draw[thick, draw=gray!25, -triangle 90] (BC) -- (CC);
+\draw[thick, draw=gray!25, -triangle 90] (CA) -- (AA);
+\draw[thick, draw=gray!25, -triangle 90] (CA) -- (AB);
+\draw[thick, draw=gray!25, -triangle 90] (CA) -- (AC);
+\draw[thick, draw=gray!25, -triangle 90] (CB) -- (BA);
+\draw[thick, draw=gray!25, -triangle 90] (CB) -- (BB);
+\draw[thick, draw=gray!25, -triangle 90] (CB) -- (BC);
+\draw[thick, draw=gray!25, -triangle 90] (CC) -- (CA);
+\draw[thick, draw=gray!25, -triangle 90] (CC) -- (CB);
+\draw[thick, draw=black, -triangle 90] (AC) -- (CA);
+\draw[thick, draw=black, -triangle 90] (AC) -- (CB);
+\draw[thick, draw=black, -triangle 90] (AC) -- (CC);
+
+\draw(AA) edge[thick, draw=gray!25, -triangle 90, out=-60, in=-120, looseness=4] (AA);
+\draw(BB) edge[thick, draw=gray!25, -triangle 90, out=140, in=80, looseness=4] (BB);
+\draw(CC) edge[thick, draw=gray!25, -triangle 90, out=-20, in=-80, looseness=4] (CC);
+
+
+\end{tikzpicture}
+
+\end{document}

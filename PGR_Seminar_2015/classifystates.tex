@@ -1,0 +1,52 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usepackage{standalone}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\node[align=center] (A) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=cyan!70!teal,text=black,shape=ellipse}] at (0, 3) {\huge A};
+
+\node[align=center] (B) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=cyan!70!teal,text=black,shape=ellipse}] at (3, 0) {\huge B};
+
+\node[align=center] (C) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (11, 2.5) {\huge D};
+
+\node[align=center] (D) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (8, 7) {\huge C};
+
+\node[align=center] (E) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=red!60!orange,text=black,shape=ellipse}] at (17, 1) {\huge E};
+
+
+
+
+\draw (A) edge[ultra thick, in=170, out=90, -triangle 90, looseness=2.5] (A);
+\draw (A) edge[ultra thick, in=180, out=-130, -triangle 90, looseness=1.5] (B);
+\draw (B) edge[ultra thick, in=0, out=50, -triangle 90, looseness=1.5] (A);
+
+\draw (C) edge[ultra thick, in=-110, out=160, -triangle 90, looseness=1] (D);
+\draw (D) edge[ultra thick, in=70, out=-20, -triangle 90, looseness=1] (C);
+
+\draw (C) edge[ultra thick, in=-160, out=-60, -triangle 90, looseness=1] (E);
+
+\draw (E) edge[ultra thick, in=-10, out=-90, -triangle 90, looseness=2.5] (E);
+
+\draw (D) edge[ultra thick, in=60, out=180, -triangle 90, looseness=1] (A);
+\draw (C) edge[ultra thick, in=-20, out=-120, -triangle 90, looseness=1] (B);
+
+
+
+
+\draw[dashed, draw=gray] (0, 9) -- (7.5, -2);
+\draw[dashed, draw=gray] (17, 9) -- (11.5, -2);
+
+
+\node[text=cyan!70!teal] at (-1, -1) {\Huge Recurrent};
+\node[text=orange!50!yellow] at (9, 9) {\Huge Transient};
+\node[text=red!60!orange] at (17, 3) {\Huge Absorbing};
+
+\end{tikzpicture}
+
+\end{document}

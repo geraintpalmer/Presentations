@@ -1,0 +1,38 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usepackage{standalone}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+
+\node[align=center] (A) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (0, 4) {\huge A};
+
+\node[align=center] (B) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (8, 4) {\huge B};
+
+\node[align=center] (C) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (4, 0) {\huge C};
+
+
+\draw (A) edge[ultra thick, -triangle 90, out=30, in=150] (B);
+\draw[ultra thick, -triangle 90] (A) -- (C);
+\draw[ultra thick, -triangle 90] (B) -- (A);
+\draw (B) edge[ultra thick, -triangle 90, out=-90, in=0] (C);
+\draw(C) edge[ultra thick, -triangle 90, out=180, in=-90] (A);
+\draw[ultra thick, -triangle 90] (C) -- (B);
+
+
+\node at (4, 6) {7.5};
+\node at (4, 3.5) {4.0};
+\node at (2.3, 2.3) {6.3};
+\node at (0, 1) {11.2};
+\node at (5.7, 2.3) {2.9};
+\node at (8, 1) {5.8};
+
+
+\end{tikzpicture}
+
+\end{document}

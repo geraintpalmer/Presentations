@@ -1,0 +1,45 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usepackage{standalone}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+
+\node[align=center] (A) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (0, 4) {\huge A};
+
+\node[align=center] (B) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (8, 4) {\huge B};
+
+\node[align=center] (C) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (4, 0) {\huge C};
+
+
+\draw(A) edge[ultra thick, -triangle 90, out=110, in=170, looseness=3] (A);
+\draw (A) edge[ultra thick, -triangle 90, out=30, in=150] (B);
+\draw[ultra thick, -triangle 90] (A) -- (C);
+\draw[ultra thick, -triangle 90] (B) -- (A);
+\draw(B) edge[ultra thick, -triangle 90, out=70, in=10, looseness=3] (B);
+\draw (B) edge[ultra thick, -triangle 90, out=-90, in=0] (C);
+\draw(C) edge[ultra thick, -triangle 90, out=180, in=-90] (A);
+\draw[ultra thick, -triangle 90] (C) -- (B);
+\draw(C) edge[ultra thick, -triangle 90, out=-50, in=-130, looseness=3] (C);
+
+
+\node at (4, 6) {0.2};
+\node at (4, 3.5) {0.8};
+\node at (2.3, 2.3) {0.3};
+\node at (0, 1) {0.2};
+\node at (5.7, 2.3) {0.6};
+\node at (8, 1) {0.1};
+
+\node at (-1.2, 5.8) {0.5};
+\node at (9.2, 5.8) {0.1};
+\node at (4, -2) {0.2};
+
+
+\end{tikzpicture}
+
+\end{document}
