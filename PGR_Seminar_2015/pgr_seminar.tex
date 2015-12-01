@@ -15,7 +15,7 @@
 \usepackage{amsthm}
 \usepackage{mathtools}
 \usepackage{tcolorbox}
-
+\usepackage{hyperref}
 
 
 \definecolor{lightblue}{RGB}{124,190,255}
@@ -23,6 +23,10 @@
 
 \beamertemplatenavigationsymbolsempty
 \setbeamerfont{caption}{size=\tiny}
+\setbeamertemplate{itemize items}{\textcolor{orange!50!yellow}{\textbullet}}
+\setbeamertemplate{enumerate items}[square]
+\setbeamercolor{item projected}{bg=orange!50!yellow}
+
 
 
 \title
@@ -36,6 +40,34 @@
 \begin{document}
 
 \frame{\titlepage}
+
+\begin{frame}
+  \begin{enumerate}
+    \vfill\item Discrete Time Markov Chains
+    \begin{itemize}
+      \vfill\item Steady-State Probabilities
+      \vfill\item Higher Order Markov Chains
+    \end{itemize}
+    \vfill\item Absorbing Markov Chains
+    \begin{itemize}
+      \vfill\item Snakes \& Ladders
+    \end{itemize}
+    \vfill\item Continuous Time Markov Chains
+    \begin{itemize}
+      \vfill\item A Simple Queue
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{figure}
+  \includegraphics[width=\textwidth]{lego_drwho}
+  \caption{from Flickr \href{https://www.flickr.com/photos/brickset/}{\textcolor{blue}{brickset}}}
+\end{figure}
+\end{frame}
+
 
 
 \begin{frame}
@@ -187,6 +219,12 @@
 
 
 
+\begin{frame}
+\frametitle{Generating Music with Markov Chains}
+\url{https://www.youtube.com/watch?v=qOZ2Q-Ls48U}
+\end{frame}
+
+
 
 \begin{frame}
 \frametitle{Classification of States}
@@ -317,6 +355,21 @@ Service time $\sim$ Exponential($\mu$)
   0 & \mu & -(\lambda+\mu) & \lambda \\
   0 & 0 & \mu & -\mu\end{array}\right)
 \end{equation*}
+\pause
+\begin{align*}
+\pi_0 &= \frac{\mu^3}{\lambda^3 + \lambda^2\mu + \lambda\mu^2 + \mu^3}\\
+\pi_1 &= \frac{\lambda\mu^2}{\lambda^3 + \lambda^2\mu + \lambda\mu^2 + \mu^3}\\
+\pi_2 &= \frac{\lambda^2\mu}{\lambda^3 + \lambda^2\mu + \lambda\mu^2 + \mu^3}\\
+\pi_3 &= \frac{\lambda^3}{\lambda^3 + \lambda^2\mu + \lambda\mu^2 + \mu^3}
+\end{align*}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{center}
+\huge Thank You!
+\end{center}
 \end{frame}
 
 \end{document}
