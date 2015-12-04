@@ -7,7 +7,38 @@
 
 \begin{tikzpicture}
 
-\node[align=center, ultra thick] (start) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (4, 9.25) {\LARGE Start};
+\node[align=center] (simulation) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (0, 0) {\LARGE Simulation};
+
+
+\node[align=center] (nodes) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (7.5, 3.75) {\LARGE Nodes};
+
+
+\node[align=center] (arrivalnode) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (7.5, 0) {\LARGE Arrival Node};
+
+
+\node[align=center] (exitnode) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (7.5, -3.75) {\LARGE Exit Node};
+
+
+\node[align=center] (servers) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (14, 1.875) {\LARGE Servers};
+
+
+\node[align=center] (individuals) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (14, -1.875) {\LARGE Individuals};
+
+
+\node[align=center] (datarecords) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=orange!50!yellow,text=black,shape=ellipse}] at (21.5, -1.875) {\LARGE Data Records};
+
+
+
+\draw (datarecords) edge[ultra thick,-triangle 90] (individuals);
+\draw (servers) edge[ultra thick,-triangle 90,out=-65,in=65] (individuals);
+\draw (individuals) edge[ultra thick,-triangle 90,out=115,in=-115] (servers);
+\draw (servers) edge[ultra thick,-triangle 90,out=135,in=0] (nodes);
+\draw (individuals) edge[ultra thick,-triangle 90] (nodes);
+\draw (individuals) edge[ultra thick,-triangle 90,out=180,in=-45] (arrivalnode);
+\draw (individuals) edge[ultra thick,-triangle 90,out=-135,in=0] (exitnode);
+\draw (nodes) edge[ultra thick,-triangle 90,out=-180,in=75] (simulation);
+\draw (arrivalnode) edge[ultra thick,-triangle 90] (simulation);
+\draw (exitnode) edge[ultra thick,-triangle 90,out=180,in=-75] (simulation);
 
 \end{tikzpicture}
 
