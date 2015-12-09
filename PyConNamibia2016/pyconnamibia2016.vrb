@@ -1,0 +1,4 @@
+\frametitle{Coverage}
+\resizebox{\textwidth}{!}{%
+\lstinputlisting[language=Python]{coverage_results.txt}%
+}

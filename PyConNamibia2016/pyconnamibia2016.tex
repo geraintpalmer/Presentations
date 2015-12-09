@@ -25,7 +25,7 @@
 \definecolor{codegreen}{RGB}{0,120,0}
 
 \lstset{language=Python,
-basicstyle=\scriptsize\ttfamily\bfseries,
+basicstyle=\tiny\ttfamily\bfseries,
 commentstyle=\color{red}\itshape,
 stringstyle=\color{darkorange},
 showstringspaces=false,
@@ -42,6 +42,7 @@ keywordstyle=\color{codegreen}\bfseries}
 \author{Geraint Palmer}
 \date{PyCon Namibia 2016}
 \titlegraphic{\includegraphics[width=2.5cm]{cflogo} $\quad$ \includegraphics[width=2.5cm]{asq_logo} $\quad$ \includegraphics[width=2.5cm]{napycon_logo}}
+
 
 
 
@@ -115,6 +116,10 @@ keywordstyle=\color{codegreen}\bfseries}
 
 \begin{frame}
 \frametitle{Git \& GitHub}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{gitlogo}
+\includegraphics[width=0.5\textwidth]{octocat}
+\end{figure}
 \end{frame}
 
 \begin{frame}
@@ -146,7 +151,30 @@ keywordstyle=\color{codegreen}\bfseries}
 
 \begin{frame}
 \frametitle{Travis}
+\begin{figure}
+    \vfill
+    \includegraphics[width=0.6\textwidth]{travispass}
+    \vfill
+    \includegraphics[width=0.6\textwidth]{travisfail}
+    \vfill
+\end{figure}
 \end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Coverage}
+\resizebox{\textwidth}{!}{%
+\lstinputlisting[language=Python]{coverage.txt}%
+}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Coverage}
+\resizebox{\textwidth}{!}{%
+\lstinputlisting[language=Python]{coverage_results.txt}%
+}
+\end{frame}
+
 
 \begin{frame}
 \begin{figure}
@@ -203,6 +231,12 @@ Modelling an ophthalmology clinic to strategise scheduling.\\
 \begin{figure}
     \includestandalone[width=0.9\textwidth]{ophthalmology}
 \end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\huge Thank You!
+\end{center}
 \end{frame}
 
 \end{document}
