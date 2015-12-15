@@ -1,0 +1,16 @@
+\documentclass{standalone}
+% \documentclass{article}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+\node[text=black, fill=cyan!70!black, draw=black, shape=ellipse,minimum height=1.5cm, minimum width=3.5cm] at (0, 0) {External Arrival};
+\node[text=black, fill=cyan!70!black, draw=black, shape=ellipse,minimum height=1.5cm, minimum width=3.5cm] at (4, 0) {Finish Service};
+\node[text=black, fill=lime!70!black, draw=black, shape=ellipse,minimum height=1.5cm, minimum width=3.5cm] at (-2, -2) {Start Service};
+\node[text=black, fill=lime!70!black, draw=black, shape=ellipse,minimum height=1.5cm, minimum width=3.5cm] at (2, -3) {Release Customer};
+\node[text=black, fill=lime!70!black, draw=black, shape=ellipse,minimum height=1.5cm, minimum width=3.5cm] at (6, -2) {Block Customer};
+\end{tikzpicture}
+
+\end{document}

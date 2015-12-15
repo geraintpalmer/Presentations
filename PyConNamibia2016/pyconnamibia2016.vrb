@@ -1,4 +1,2 @@
 \frametitle{Coverage}
-\resizebox{\textwidth}{!}{%
-\lstinputlisting[language=Python]{coverage_results.txt}%
-}
+\fontsize{7pt}{9pt} \inputminted{python}{coverage_results.txt}

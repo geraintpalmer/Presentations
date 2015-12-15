@@ -15,21 +15,13 @@
 \usepackage{amsthm}
 \usepackage{mathtools}
 \usepackage{tcolorbox}
-\usepackage{listings}
 \usepackage{float}
 \usepackage{bm}
+\usepackage{minted}
 
 \definecolor{lightblue}{RGB}{124,190,255}
 \definecolor{darkgreen}{RGB}{24,145,0}
 \definecolor{darkorange}{RGB}{220,110,0}
-\definecolor{codegreen}{RGB}{0,120,0}
-
-\lstset{language=Python,
-basicstyle=\tiny\ttfamily\bfseries,
-commentstyle=\color{red}\itshape,
-stringstyle=\color{darkorange},
-showstringspaces=false,
-keywordstyle=\color{codegreen}\bfseries}
 
 
 
@@ -38,10 +30,10 @@ keywordstyle=\color{codegreen}\bfseries}
 
 
 \title
-{ASQ Simulates Queues}
-\author{Geraint Palmer}
+{Ciw - The Queueing Network Simulation}
+\author{Geraint Ian Palmer}
 \date{PyCon Namibia 2016}
-\titlegraphic{\includegraphics[width=2.5cm]{cflogo} $\quad$ \includegraphics[width=2.5cm]{asq_logo} $\quad$ \includegraphics[width=2.5cm]{napycon_logo}}
+\titlegraphic{\includegraphics[width=2.3cm]{cflogo} $\quad$ \includegraphics[width=2.3cm]{ciw_logo} $\quad$ \includegraphics[width=2.3cm]{napycon_logo} $\quad$ \includegraphics[width=2.3cm]{pydifflogo}}
 
 
 
@@ -58,24 +50,18 @@ keywordstyle=\color{codegreen}\bfseries}
 \end{frame}
 
 \begin{frame}
+\begin{figure}
+    \includegraphics[width=\textwidth]{legoqueue}
+\end{figure}
+\end{frame}
+
+\begin{frame}
 \frametitle{What is a Queue?}
 \begin{figure}
   \includestandalone[width=0.8\textwidth]{2nodefeedbackexample}
 \end{figure}
 \end{frame}
 
-\begin{frame}
-\begin{figure}
-    \includestandalone[width=0.35\textwidth]{repostructure_scripts}
-\end{figure}
-\end{frame}
-
-\begin{frame}
-\frametitle{Demo}
-\begin{figure}
-    \includegraphics[width=0.7\textwidth]{asq_logo}
-\end{figure}
-\end{frame}
 
 \begin{frame}
 \begin{figure}
@@ -92,15 +78,11 @@ keywordstyle=\color{codegreen}\bfseries}
 
 \begin{frame}
 \frametitle{Event Types}
+\begin{center}
 \begin{figure}
-\begin{tikzpicture}
-\node[text=cyan!70!black] at (0, 0) {External Arrival};
-\node[text=cyan!70!black] at (4, 0) {Finish Service};
-\node[text=lime!70!black] at (-2, -2) {Start Service};
-\node[text=lime!70!black] at (2, -3) {Release / Move Customer};
-\node[text=lime!70!black] at (6, -2) {Block Customer};
-\end{tikzpicture}
+    \includestandalone[width=0.9\textwidth]{events}
 \end{figure}
+\end{center}
 \end{frame}
 
 \begin{frame}
@@ -112,6 +94,9 @@ keywordstyle=\color{codegreen}\bfseries}
 
 \begin{frame}
 \frametitle{Pair Programing / Collaborative Work}
+\begin{figure}
+    \includegraphics[width=0.9\textwidth]{collabwork}
+\end{figure}
 \end{frame}
 
 \begin{frame}
@@ -137,42 +122,43 @@ keywordstyle=\color{codegreen}\bfseries}
 
 \begin{frame}
 \frametitle{Doctests}
-\resizebox{\textwidth}{!}{%
-\lstinputlisting[language=Python]{doctests.py}%
-}
+\inputminted{python}{doctests.py}
 \end{frame}
 
 \begin{frame}
 \frametitle{Unittests}
-\resizebox{\textwidth}{!}{%
-\lstinputlisting[language=Python]{unittests.py}%
-}
+\begin{center}
+\fontsize{8.5pt}{10pt} \inputminted{python}{unittests.py}
+\end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Travis}
-\begin{figure}
+\begin{columns}[c]
+\column{.6\textwidth}
+\begin{figure}[width=\colwidth]
     \vfill
-    \includegraphics[width=0.6\textwidth]{travispass}
-    \vfill
-    \includegraphics[width=0.6\textwidth]{travisfail}
+    \includegraphics[width=0.8\textwidth]{travispass}
+    \vspace{10mm}
+    \includegraphics[width=0.8\textwidth]{travisfail}
     \vfill
 \end{figure}
+\column{.4\textwidth}
+\begin{figure}[width=\textwidth]
+    \includegraphics[width=0.8\textwidth]{traviscilogo}
+\end{figure}
+\end{columns}
 \end{frame}
 
 
 \begin{frame}[fragile]
 \frametitle{Coverage}
-\resizebox{\textwidth}{!}{%
-\lstinputlisting[language=Python]{coverage.txt}%
-}
+\fontsize{10pt}{10pt} \inputminted{python}{coverage.txt}
 \end{frame}
 
 \begin{frame}[fragile]
 \frametitle{Coverage}
-\resizebox{\textwidth}{!}{%
-\lstinputlisting[language=Python]{coverage_results.txt}%
-}
+\fontsize{7pt}{9pt} \inputminted{python}{coverage_results.txt}
 \end{frame}
 
 
@@ -184,6 +170,9 @@ keywordstyle=\color{codegreen}\bfseries}
 
 \begin{frame}
 \frametitle{Packaging}
+\begin{center}
+    \huge\texttt{pip install ciw}
+\end{center}
 \end{frame}
 
 \begin{frame}
@@ -194,6 +183,12 @@ keywordstyle=\color{codegreen}\bfseries}
 
 \begin{frame}
 \frametitle{Documentation}
+\begin{figure}
+    \includegraphics[width=0.8\textwidth]{sphinxlogo}
+\end{figure}
+\begin{figure}
+    \includegraphics[width=0.8\textwidth]{readthedocslogo}
+\end{figure}
 \end{frame}
 
 
@@ -234,9 +229,31 @@ Modelling an ophthalmology clinic to strategise scheduling.\\
 \end{frame}
 
 \begin{frame}
-\begin{center}
-\huge Thank You!
-\end{center}
+\begin{columns}[b]
+\begin{column}{.7\textwidth}
+\begin{flushright}
+\huge Thank You!\\[10mm]
+\footnotesize palmergi1@cardiff.ac.uk\\[5mm]
+\footnotesize \url{geraintianpalmer.org.uk}\\[5mm]
+\footnotesize \url{github.com/geraintpalmer/Ciw}\\[5mm]
+\footnotesize \url{ciw.readthedocs.org}\\[5mm]
+\end{flushright}
+\end{column}
+\vrule{}
+\begin{column}{.25\textwidth}
+\begin{flushright}
+\footnotesize PyYAML\\[1.75mm]
+\footnotesize NetworkX\\[1.75mm]
+\footnotesize Docopt\\[1.75mm]
+\footnotesize Coverage\\[1.75mm]
+\footnotesize TravisCI\\[1.75mm]
+\footnotesize Sphinx\\[1.75mm]
+\footnotesize ReadTheDocs\\[1.75mm]
+\end{flushright}
+\end{column}
+\begin{column}{0.05\textwidth}
+\end{column}
+\end{columns}
 \end{frame}
 
 \end{document}
