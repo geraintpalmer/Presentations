@@ -4,16 +4,11 @@ Hi, I'm Geraint. This will be a kind of 2-in-1 talk, first about the library Ciw
 
 ---
 
-Fristy, what is a queue?
+Firsty, what is a queue?
 It's some sort of service centre in which customers arrive, spend some time in service, and then leave.
-In some queues if there are already a certain number of customers already in service, the next customer cannot begin service immediately, and so must wait in line until servers become available.
+In some queues if there are already a certain number of customers already in service, the next customer cannot begin service immediately, and so must wait in line until servers become available. We get lines of people waiting like this.
 
-Mathematically, the simplest queue to consider is an M/M/1 queue shown here.
-In this queue, customers arrive randomly according to the Poisson distribution (that is their inter-arrival times are random according to the exponential distribution), there is only one server, and service times are random according to the exponential distribution.
-
-We'll look at this in a bit, but why do we study queues?
-
----
+So why do we study queues?
 
 I'm sure around campus this week you've seen scenes like this all over the place. Is there anything we can do to optimise this? Reduce waiting times? Minimise the space required to queue?
 Does big queues put customers off using your business?
@@ -36,7 +31,12 @@ However modelling like this is inaccurate, time-consuming, and can be expensive 
 
 This is where computer simulation comes in.
 
-Remember the M/M/1 queue. Imagine if customer arrive randomly 4 every hour, and services take roughly every 15 minutes. We don't expect any queue right? Let's use the library Ciw to find out.
+---
+
+Mathematically, the simplest queue to consider is an M/M/1 queue shown here.
+In this queue, customers arrive randomly according to the Poisson distribution (that is their inter-arrival times are random according to the exponential distribution), there is only one server, and service times are random according to the exponential distribution.
+
+Imagine if customer arrive randomly 4 every hour, and services take roughly every 15 minutes. We don't expect any queue right? Let's use the library Ciw to find out.
 
 ---
 
@@ -57,7 +57,7 @@ Here's an overview of the library, now to talk about the code itself.
 
 ---
 
-Ciw uses the 3 phse simulation approach shown in this flow diagram.
+Ciw uses the 3 phase simulation approach shown in this flow diagram.
 Start at the start, and initialise the system.
 
 At phase A the clock is moved forward to the next scheduled event.
