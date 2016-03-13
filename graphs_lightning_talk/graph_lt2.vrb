@@ -1,0 +1,13 @@
+\small{
+\begin{minted}{python}
+from scipy.stats import gaussian_kdesns.set(style="white")
+
+densities = [gaussian_kde(row) for row in ratios_inverse_ns]
+xs = [i/400.0 for i in range(400)]
+ds = []
+for dnsty in densities:
+    dnsty.covariance_factor = lambda : 0.25
+    dnsty._compute_covariance()
+    ds.append(dnsty(xs))
+\end{minted}
+}
