@@ -58,20 +58,18 @@
 % 3rd slide pause, with OPICP, how do rates and flows change, what don't we know and what do we want to investigate?
 \begin{frame}
 \frametitle{Elderly People's Flows Through Health System}
+\begin{figure}
+\includestandalone[width=\textwidth]{patient_flows}
+\end{figure}
 \end{frame}
 
-% 4th slide, Workforce planning stuff...???
-\begin{frame}
-\frametitle{Workforce Requirements}
-\end{frame}
-
-% 5th slide, Ciw and simulation modelling
+% 4th slide, Ciw and simulation modelling
 \begin{frame}
 \frametitle{Simulation with Ciw}
 \begin{columns}[c]
 \column{0.5\textwidth}
-Open Source Python Library
-
+Open Source Python Library\\
+Three-Phase Simulation\\
 \begin{figure}
 \includegraphics[width=0.6\textwidth]{logo}
 \end{figure}
@@ -87,12 +85,7 @@ Open Source Python Library
 \end{frame}
 
 
-% 6th slide, Aim to keep model general... can be used for other pathways and interventions. May lead to deadlock...
-\begin{frame}
-\frametitle{Generality}
-\end{frame}
-
-% 7th slide, gridlock, intro to deadlock
+% 5th slide, gridlock, intro to deadlock
 \begin{frame}
     \frametitle{Deadlock}
     \begin{figure}
@@ -100,14 +93,14 @@ Open Source Python Library
     \end{figure}
 \end{frame}
 
-% 8th slide, digraph and detecting deadlock with knots
+% 6th slide, digraph and detecting deadlock with knots
 \begin{frame}
     \begin{figure}
     \includestandalone[width=\textwidth]{buildupdigraph}
     \end{figure}
 \end{frame}
 
-% 9th slide, deadlock detection within Ciw
+% 7th slide, deadlock detection within Ciw
 \begin{frame}
 \frametitle{Deadlock Detection in Ciw}
 \begin{center}
@@ -115,12 +108,15 @@ Open Source Python Library
 \end{center}
 \end{frame}
 
-% 10th slide, introduce 3 deadlocking networks that will be investigated
+% 8th slide, introduce 3 deadlocking networks that will be investigated
 \begin{frame}
 \frametitle{Three Deadlocking Queueing Networks}
+\begin{figure}
+\includestandalone[width=\textwidth]{3networks}
+\end{figure}
 \end{frame}
 
-% 11th slide, Markovian deadlock model 1 Node
+% 9th slide, Markovian deadlock model 1 Node
 \begin{frame}
     \frametitle{Markovian Model of Deadlock}
     \includestandalone[width=\textwidth]{1nodemultiserver}\newline
@@ -156,7 +152,6 @@ $
   \quad \forall \quad 0 \leq b \leq c$
 
 \vspace{10 mm}
-
 \end{frame}
 
 \begin{frame}
@@ -175,7 +170,7 @@ $
 
 
 
-% 12th slide, Markov deadlock model 2 Node
+% 10th slide, Markov deadlock model 2 Node
 \begin{frame}
     \frametitle{Markovian Model of Deadlock}
     \includestandalone[width=\textwidth]{2nodemultiserver}\newline
@@ -210,7 +205,6 @@ $
 }
 \end{center}
 \end{table}
-
 \end{frame}
 
 \begin{frame}
@@ -228,7 +222,7 @@ $
 \end{frame}
 
 
-% 13th lide, Markov deadlock model 2 Node self loops
+% 11th lide, Markov deadlock model 2 Node self loops
 \begin{frame}
     \frametitle{Markovian Model of Deadlock}
     \includestandalone[width=\textwidth]{2nodefeedbackexample}\newline
@@ -296,6 +290,7 @@ $q_{-1, s} = q_{-2, s} = q_{-3, s} = 0$
 }
 \end{frame}
 
+
 \begin{frame}
     \begin{figure}
     \includestandalone[width=0.95\textwidth]{markov_chain_feedback}
@@ -310,9 +305,24 @@ $q_{-1, s} = q_{-2, s} = q_{-3, s} = 0$
     \includegraphics[width=0.5\textwidth]{vary_n1fb}
 \end{frame}
 
-% 14th slide, remind of healthcare motivation... future work
+% 12th slide, remind of healthcare motivation... future work
 \begin{frame}
-\frametitle{Recap about Health Stuff}
+\frametitle{Summary}
+\begin{block}{Summary}
+\begin{itemize}
+\item Developed a general use simulation library in Python
+\item Investigated potential for deadlock, automatic detection
+\item Modelled some deadlocking queueing networks
+\end{itemize}
+\end{block}
+
+\begin{block}{To Do...}
+\begin{itemize}
+\item Build and parameterise patient flow networks from data
+\item Use queueing network analysis and simulation to investigate impact of the OPICP
+\item Determine the OPICP's effect on demand and workforce needs
+\end{itemize}
+\end{block}
 \end{frame}
 
 

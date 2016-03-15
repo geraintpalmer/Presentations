@@ -1,0 +1,17 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\node at (0, 0) {\includestandalone{1nodemultiserver}};
+\node at (30, 0) {\includestandalone{2nodemultiserver}};
+\node at (15, -15) {\includestandalone{2nodefeedbackexample}};
+
+\end{tikzpicture}
+
+\end{document}

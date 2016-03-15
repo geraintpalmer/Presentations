@@ -3,10 +3,10 @@
 ...   'Number_of_nodes': 2,
 ...   'Arrival_distributions':
 ...      [['Exponential', 6.0],
-...       ['Exponential', 6.0]],
+...       ['Uniform', 0.2, 0.4]],
 ...   'Service_distributions':
-...      [['Exponential', 5.0],
-...       ['Exponential', 6.0]],
+...      [['Lognormal', 0.4, 0.3],
+...       ['Deterministic', 0.25]],
 ...   'Transition_matrices':
 ...      [[0.5, 0.1],
 ...       [0.0, 0.4]],
