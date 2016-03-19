@@ -15,7 +15,7 @@
 \usepackage{amsthm}
 \usepackage{mathtools}
 \usepackage{minted}
-\usemintedstyle{tango}
+\usemintedstyle{trac}
 
 \definecolor{lightblue}{RGB}{124,190,255}
 \definecolor{darkgreen}{RGB}{24,145,0}
@@ -66,24 +66,48 @@
 % 4th slide, Ciw and simulation modelling
 \begin{frame}
 \frametitle{Simulation with Ciw}
-\begin{columns}[c]
-\column{0.5\textwidth}
+\begin{center}
 Open Source Python Library\\
 Three-Phase Simulation\\
 \begin{figure}
-\includegraphics[width=0.6\textwidth]{logo}
+\includegraphics[width=0.4\textwidth]{logo}
 \end{figure}
-
 {\tiny
 \url{https://github.com/geraintpalmer/Ciw}\\
 \url{https://pypi.python.org/pypi/Ciw}\\
 \url{http://ciw.readthedocs.org}\\}
+\end{center}
+\end{frame}
 
-\column{0.5\textwidth}
+% Ciw YAML
+\begin{frame}
+\begin{columns}
+\column{0.2\textwidth}
+
+\column{0.8\textwidth}
 \fontsize{8.5pt}{10pt} \inputminted{python}{ciwexample.py}
 \end{columns}
 \end{frame}
 
+% Ciw Sam
+\begin{frame}
+\begin{center}
+S.T. Luen-English, J. Gillard, \& V. Knight
+\begin{figure}
+\includegraphics[width=0.6\textwidth]{samswork}
+\end{figure}
+\end{center}
+\end{frame}
+
+% Ciw Lieke
+\begin{frame}
+\begin{center}
+L. H\"{o}lscher \& J. Morgan
+\begin{figure}
+\includestandalone[width=\textwidth]{ophthalmology}
+\end{figure}
+\end{center}
+\end{frame}
 
 % 5th slide, gridlock, intro to deadlock
 \begin{frame}
