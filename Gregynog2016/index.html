@@ -51,7 +51,7 @@
 
 
                 <section>
-                    <img width=600 src="img/gridlock.pdf">
+                    <img width=600 src="img/gridlock.gif">
                 </section>
 
                 <section>
@@ -59,7 +59,7 @@
                         <img style="border: 4px solid #657b83; box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);" width=800 src="img/UNAMqueue.jpg">
                     </section>
                     <section>
-                    	<img width=1000 src="img/1nodeexample.pdf">
+                    	<img width=1000 src="img/1nodeexample.gif">
                     </section>
                     <section>
                     	<img width=1000 src="img/sampling.gif">
@@ -69,34 +69,234 @@
 
                 <section>
                 	<section>
-                    	<img width=1000 src="img/2nodefeedbackexample.pdf">
+                    	<img width=1000 src="img/2nodefeedbackexample.gif">
                     </section>
                     <section>
-                    	<img width=1000 src="img/2nodesindeadlock.pdf">
+                    	<img width=1000 src="img/2nodesindeadlock.gif">
                     </section>
                 </section>
                 <section>
                 	<section data-transition="none">
-                		<img width=1000 src="img/buildupdigraph_1.pdf">
+                		<img width=1000 src="img/buildupdigraph_1.gif">
                 	</section>
                 	<section data-transition="none">
-                		<img width=1000 src="img/buildupdigraph_2.pdf">
+                		<img width=1000 src="img/buildupdigraph_2.gif">
                 	</section>
                 	<section data-transition="none">
-                		<img width=1000 src="img/buildupdigraph_3.pdf">
+                		<img width=1000 src="img/buildupdigraph_3.gif">
                 	</section>
                 	<section data-transition="none">
-                		<img width=1000 src="img/buildupdigraph_4.pdf">
+                		<img width=1000 src="img/buildupdigraph_4.gif">
                 	</section>
                 	<section data-transition="none">
-                		<img width=1000 src="img/buildupdigraph_5.pdf">
+                		<img width=1000 src="img/buildupdigraph_5.gif">
                 	</section>
                 	<section data-transition="none">
-                		<img width=1000 src="img/buildupdigraph_6.pdf">
+                		<img width=1000 src="img/buildupdigraph_6.gif">
                 	</section>
                 </section>
 
                 <section>
+                    <section>
+                        $S = \{i\in\mathbb{N} \; | \; 0 \leq i \leq n + 2c\}$
+                        <br>
+                        <br>
+                        <img width=1000 src="img/1nodemultiserver.gif">
+                        <br>
+                        <br>
+                        $\delta = i_2 - i_1$
+                    </section>
+                    <section style="font-size: 22px;">                                               
+                        $q_{i_1, i_2} = \left\{
+                          \begin{array}{rr}
+                            \left. \begin{array}{rr}
+                              \Lambda & \text{os yw } \delta = 1 \\
+                              (1-r_{11})\mu\text{min}(i, c) & \text{os yw } \delta = -1 \\
+                              0 & \text{fel arall}
+                            \end{array} \right\} & \text{os yw } i_1 < n + c \\
+                          \end{array} \right.$
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                        $q_{i_1, i_2} = \left\{
+                          \begin{array}{rr}
+                            \left. \begin{array}{rr}
+                              (c-b)r_{11}\mu & \text{os yw } \delta = 1 \\
+                              (1-r_{11})(b-k)\mu & \text{os yw } \delta = -b-1\\
+                              0 & \text{fel arall}
+                            \end{array} \right\} & \text{os yw } i_1 = n + c + b \\
+                          \end{array} \right.
+                          \quad \forall \quad 0 \leq b \leq c$
+
+
+                    </section>
+                    <section style="margin-top: -50px;">
+                        <img width=1000 src="img/MC1nodemultiserv.gif">
+                    </section>
+                    <section>
+                        <div style="float:left; margin:0; width:50%;">
+                            <img width=500 src="img/varyL_1Nms.gif">
+                        </div>
+                        <div style="float:left; margin:0; width:50%;">
+                            <img width=500 src="img/varymu_1Nms.gif">
+                        </div>
+                        <div style="float:left; margin:0; width:50%;">
+                            <img width=500 src="img/varyn_1Nms.gif">
+                        </div>
+                        <div style="float:left; margin:0; width:50%;">
+                            <img width=500 src="img/varyc_1Nms.gif">
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section style="font-size: 18px;">
+                        <p style="font-size: 26px;">$S = \{(i,j)\in\mathbb{N}^{(n_1+c_1+c_2)\times (n_2+c_2+c_1)} \; | \; i \leq n_1+c_1+j, \; j \leq n_2+c_2+i\}$</p>
+                        <br>
+                        <img width=1000 src="img/2nodemultiserver.gif">
+                        <br>
+                        <br>
+                        $\delta = (i_2, j_2) - (i_1, j_1)$<br>
+                        $b_k = \max(0, i_k-n_k-c_k)$<br>
+                        $s_1 = \min(i_1, c_1)-b_2$<br>
+                        $s_2 = \min(i_2, c_2)-b_1$
+                    </section>
+                    <section style="margin-left:-120px;">
+                        <table style="font-size: 17px; width: 130%; align: right;">
+                            <tr>
+                                <td></td>
+                                <td>$j_1 < n_2 + c_2$</td>
+                                <td>$j_1 = n_2 + c_2$</td>
+                                <td>$j_1 > n_2 + c_2$</td>
+                            </tr>
+                            <tr>
+                                <td>$i_1 < n_1 + c_1$</td>
+                                <td>$\Lambda_1$ if $\delta = (1, 0)$<br><br>$\Lambda_2$ os yw $\delta = (0, 1)$<br><br>$r_{12}s_1\mu_1$ os yw $\delta = (-1, 1)$<br><br>$r_{21}s_2\mu_2$ os yw $\delta = (1, -1)$<br><br>$(1-r_{12})s_1\mu_1$ os yw $\delta = (-1, 0)$<br></br>$(1-r_{21})s_2\mu_2$ os yw $\delta = (0, -1)$</td>
+                                <td>$\Lambda_1$ os yw $\delta = (1, 0)$<br><br>$r_{12}s_1\mu_1$ os yw $\delta = (0, 1)$<br><br>$r_{21}s_2\mu_2$ os yw $\delta = (1, -1)$<br><br>$(1-r_{12})s_1\mu_1$ os yw $\delta = (-1, 0)$<br><br>$(1-r_{21})s_2\mu_2$ os yw $\delta = (0, -1)$</td>
+                                <td>$\Lambda_1$ os yw $\delta = (1, 0)$<br><br>$r_{12}s_1\mu_1$ os yw $\delta = (0, 1)$<br><br>$r_{21}s_2\mu_2$ os yw $\delta = (0, -1)$<br><br>$(1-r_{12})s_1\mu_1$ os yw $\delta = (-1, 0)$<br><br>$(1-r_{21})s_2\mu_2$ os yw $\delta = (-1, -1)$</td>
+                            </tr>
+                            <tr>
+                                <td>$i_1 = n_1 + c_1$</td>
+                                <td>$\Lambda_2$ os yw $\delta = (0, 1)$<br><br>$r_{12}s_1\mu_1$ os yw $\delta = (-1, 1)$<br><br>$r_{21}s_2\mu_2$ os yw $\delta = (1, 0)$<br><br>$(1-r_{12})s_1\mu_1$ os yw $\delta = (-1, 0)$<br><br>$(1-r_{21})s_2\mu_2$ os yw $\delta = (0, -1)$</td>
+                                <td>$r_{12}s_1\mu_1$ os yw $\delta = (0, 1)$<br><br>$r_{21}s_2\mu_2$ os yw $\delta = (1, 0)$<br><br>$(1-r_{12})s_1\mu_1$ os yw $\delta = (-1, 0)$<br><br>$(1-r_{21})s_2\mu_2$ os yw $\delta = (0, -1)$</td>
+                                <td>$r_{12}s_1\mu_1$ os yw $\delta = (0, 1)$<br><br>$r_{21}s_2\mu_2$ os yw $\delta = (1, 0)$<br><br>$(1-r_{12})s_1\mu_1$ os yw $\delta = (-1, 0)$<br><br>$(1-r_{21})s_2\mu_2$ os yw $\delta = (-1, -1)$</td>
+                            </tr>
+                                <td>$i_1 > n_1 + c_1$</td>
+                                <td>$\Lambda_2$ os yw $\delta = (0, 1)$<br><br>$r_{12}s_1\mu_1$ os yw $\delta = (-1, 0)$<br><br>$r_{21}s_2\mu_2$ os yw $\delta = (1, 0)$<br><br>$(1-r_{12})s_1\mu_1$ os yw $\delta = (-1, -1)$<br><br>$(1-r_{21})s_2\mu_2$ os yw $\delta = (0, -1)$</td>
+                                <td>$r_{12}s_1\mu_1$ os yw $\delta = (0, 1)$<br><br>$r_{21}s_2\mu_2$ os yw $\delta = (1, 0)$<br><br>$(1-r_{12})s_1\mu_1$ os yw $\delta = (-1, -1)$<br><br>$(1-r_{21})s_2\mu_2$ os yw $\delta = (0, -1)$</td>
+                                <td>$r_{12}s_1\mu_1$ os yw $\delta = (0, 1)$<br><br>$r_{21}s_2\mu_2$ os yw $\delta = (1, 0)$<br><br>$(1-r_{12})s_1\mu_1$ os yw $\delta = (-\min(b_1+1,b_2+1), -\min(b_1,b_2+1))$<br><br>$(1-r_{21})s_2\mu_2$ os yw $\delta = (-\min(b_1+1,b_2), -\min(b_1+1,b_2+1))$</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <section style="margin-top: -30px;">
+                        <img width=800 src="img/MC2nodemultiserv.gif">
+                    </section>
+                    <section>
+                        <div style="float:left; margin:0; width:50%;">
+                            <img width=500 src="img/varyL1_2Nms.gif">
+                        </div>
+                        <div style="float:left; margin:0; width:50%;">
+                            <img width=500 src="img/varymu1_2Nms.gif">
+                        </div>
+                        <div style="float:left; margin:0; width:50%;">
+                            <img width=500 src="img/varyn1_2Nms.gif">
+                        </div>
+                        <div style="float:left; margin:0; width:50%;">
+                            <img width=500 src="img/varyc1_2Nms.gif">
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section style="font-size: 22px;">
+                        $S = \{(i,j)\in\mathbb{N}^{(n_1+2\times n_2+2)} \; | \; 0 \leq i + j \leq n_1 + n_2 + 2\}\cup\{(-1), (-2), (-3)\}$
+                        <br>
+                        <br>
+                        <img width=1000 src="img/2nodefeedbackexample.gif">
+                        <br>
+                        <br>
+                        $\delta = (i_2, j_2) - (i_1, j_1)$
+                    </section>
+                    <section style="font-size: 16px;">
+                        $q_{(i_1, j_1),(i_2, j_2)} = \left\{
+                              \begin{array}{rr}
+                                \left. \begin{array}{rr}
+                                  \Lambda_1 & \text{os yw } i_1 < n_1 + 1 \\
+                                  0 & \text{fel arall}
+                                \end{array} \right\} & \text{os yw } \delta = (1, 0) \\
+                                \left. \begin{array}{rr}
+                                  \Lambda_2 & \text{os yw } j_1 < n_2 + 1 \\
+                                  0 & \text{fel arall}
+                                \end{array} \right\} & \text{os yw } \delta = (0, 1) \\
+                                \left. \begin{array}{rr}
+                                  (1 - r_{11} - r_{12})\mu_1 & \text{os yw } j_1 < n_2 + 2 \\
+                                  0 & \text{fel arall}
+                                \end{array} \right\} & \text{os yw } \delta = (-1, 0) \\
+                                \left. \begin{array}{rr}
+                                  (1 - r_{21} - r_{22})\mu_2 & \text{os yw } i_1 < n_1 + 2 \\
+                                  0 & \text{fel arall}
+                                \end{array} \right\} & \text{os yw } \delta = (0, -1) \\
+                                \left. \begin{array}{rr}
+                                  r_{12}\mu_1 & \text{os yw } j_1 < n_2 + 2 \text{ and } (i_1, j_1) \neq (n_1 + 2, n_2) \\
+                                  0 & \text{fel arall}
+                                \end{array} \right\} & \text{os yw } \delta = (-1, 1) \\
+                                \left. \begin{array}{rr}
+                                  r_{21}\mu_2 & \text{os yw } i_1 < n_1 + 2 \text{ and } (i_1, j_1) \neq (n_1, n_2 + 2) \\
+                                  0 & \text{fel arall}
+                                \end{array} \right\} & \text{os yw } \delta = (1, -1) \\
+                                0 & \text{fel arall}
+                              \end{array} \right.$
+                              <br>
+                              <br>
+                            $q_{(i_1, j_1), (-1)} = \left\{
+                              \begin{array}{rr}
+                                r_{11}\mu_1 & \text{os yw } i > n_1 \text{ and } j < n_2 + 2 \\
+                                0 & \text{fel arall}
+                              \end{array}
+                              \right.$
+                              <br>
+                              <br>
+                            $q_{(i_1, j_1), (-2)} = \left\{
+                              \begin{array}{rr}
+                                r_{22}\mu_2 & \text{os yw } j > n_2 \text{ and } i < n_1 + 2 \\
+                                0 & \text{fel arall}
+                              \end{array}
+                              \right.$
+                              <br>
+                              <br>
+                            $q_{(i_1, j_1), (-3)} = \left\{
+                              \begin{array}{rr}
+                                r_{21}\mu_2 & \text{os yw } (i, j) = (n_1, n_2 + 2) \\
+                                r_{12}\mu_1 & \text{os yw } (i, j) = (n_1 + 2, n_2) \\
+                                0 & \text{fel arall}
+                              \end{array}
+                              \right.$
+                              <br>
+                              <br>
+                              $q_{-1, s}, q_{-2, s}, q_{-3, s} = 0$
+
+                    </section>
+                    <section style="margin-top: -30px;">
+                        <img width=1000 src="img/markov_chain_feedback.gif">
+                    </section>
+                    <section>
+                        <div style="float:left; margin:0; width:50%;">
+                            <img width=500 src="img/vary_L1fb.gif">
+                        </div>
+                        <div style="float:left; margin:0; width:50%;">
+                            <img width=500 src="img/vary_mu1fb.gif">
+                        </div>
+                        <div style="margin:0 auto; width:50%;">
+                            <img width=500 src="img/vary_n1fb.gif">
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    Diolch yn fawr. 
                 </section>
 
 		<script src="../reveal.js/lib/js/head.min.js"></script>
@@ -112,7 +312,13 @@
 				history: true,
 				center: true,
 
-				transition: 'convex', // none/fade/slide/convex/concave/zoom
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+                math: {
+                    mathjax: '../MathJax/MathJax-2.6-latest/MathJax.js',
+                    // mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+                    config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+                },
 
 				// Optional reveal.js plugins
 				dependencies: [
