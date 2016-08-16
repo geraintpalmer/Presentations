@@ -1,0 +1,24 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usepackage{standalone}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\node (TL) at (0, 25) {\includestandalone{resolution_counterexample_TL}};
+\node (TR) at (30, 25) {\includestandalone{resolution_counterexample_TR}};
+\node (BL) at (0, 0) {\includestandalone{resolution_counterexample_BL}};
+\node (BR) at (30, 0) {\includestandalone{resolution_counterexample_BR}};
+
+\draw[ultra thick, -triangle 90] (TL) -- (TR) node [midway, above, sloped] {\huge Move customer at $B_1$};
+\draw[ultra thick, -triangle 90] (TL) -- (BR) node [midway, above, sloped] {\huge Move customer at $A_1$};
+\draw[ultra thick, -triangle 90] (TL) -- (BL) node [midway, above, sloped] {\huge Move customer at $A_2$};
+
+
+\end{tikzpicture}
+
+\end{document}
