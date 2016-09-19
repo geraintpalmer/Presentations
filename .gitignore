@@ -7,3 +7,4 @@
 *.snm
 *.toc
 *.DS_store
+*.ipynb_checkpoints*

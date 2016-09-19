@@ -1,0 +1,86 @@
+\documentclass{standalone}
+% \documentclass{article}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+  % Queue A
+  \draw (0, 0) -- (8, 0);
+  \draw (8, 0) -- (8, 3);
+  \draw (0, 3) -- (8, 3);
+  \draw (4, 0) -- (4, 3);
+  \draw (5, 0) -- (5, 3);
+  \draw (6, 0) -- (6, 3);
+  \draw (7, 0) -- (7, 3);
+
+  % % In and out routes
+  \draw[thick, -triangle 90] (11.8, 1.5) -- (16.5, 1.5);
+  \draw[thick, -triangle 90] (-4.5, 1.5) -- (0, 1.5) node [pos=0, left] {\huge{$\Lambda$}};
+
+  \draw[draw=none, fill=none] (8.5, -3.1) rectangle (11.5, 6.1);
+
+
+  \draw (-5.5, 7.5) -- (17.5, 7.5);
+  \draw[ultra thick] (-4.5, 7) -- (-4.5, 8);
+  \draw[dashed] (-1.7, 7) -- (-1.7, 8);
+  \draw[dashed] (0.05, 7) -- (0.05, 8);
+  \draw[dashed] (3.2, 7) -- (3.2, 8);
+
+  \draw[ultra thick] (6, 7) -- (6, 8);
+  \draw[dashed] (8.8, 7) -- (8.8, 8);
+  \draw[dashed] (10.55, 7) -- (10.55, 8);
+  \draw[dashed] (14.7, 7) -- (14.7, 8);
+
+  \draw[ultra thick] (16.5, 7) -- (16.5, 8);
+
+  \only<1>{
+  \draw[draw=none, fill=orange, opacity=0.2] (-4.5, 7) rectangle (-1.7, 8);
+  \draw (10, 4.6) circle (1.5) node {\huge{$\mu$}};
+  \draw (10, 1.5) circle (1.5) node {\huge{$\mu$}};
+  \draw (10, -1.6) circle (1.5) node {\huge{$\mu$}};
+  }
+
+  \only<2>{
+  \draw[draw=none, fill=orange, opacity=0.2] (-1.7, 7) rectangle (0.05, 8);
+  \draw (10, 1.5) circle (1.5) node {\huge{$\mu$}};
+  }
+
+  \only<3>{
+  \draw[draw=none, fill=orange, opacity=0.2] (0.05, 7) rectangle (3.2, 8);
+  }
+
+  \only<4>{
+  \draw[draw=none, fill=orange, opacity=0.2] (3.2, 7) rectangle (6, 8);
+  \draw (10, 3.1) circle (1.5) node {\huge{$\mu$}};
+  \draw (10, -0.1) circle (1.5) node {\huge{$\mu$}};
+  }
+
+  \only<5>{
+  \draw[draw=none, fill=orange, opacity=0.2] (6, 7) rectangle (8.8, 8);
+  \draw (10, 4.6) circle (1.5) node {\huge{$\mu$}};
+  \draw (10, 1.5) circle (1.5) node {\huge{$\mu$}};
+  \draw (10, -1.6) circle (1.5) node {\huge{$\mu$}};
+  }
+
+  \only<6>{
+  \draw[draw=none, fill=orange, opacity=0.2] (8.8, 7) rectangle (10.55, 8);
+  \draw (10, 1.5) circle (1.5) node {\huge{$\mu$}};
+  }
+
+  \only<7>{
+  \draw[draw=none, fill=orange, opacity=0.2] (10.55, 7) rectangle (14.7, 8);
+  }
+
+  \only<8>{
+  \draw[draw=none, fill=orange, opacity=0.2] (14.7, 7) rectangle (16.5, 8);
+  \draw (10, 3.1) circle (1.5) node {\huge{$\mu$}};
+  \draw (10, -0.1) circle (1.5) node {\huge{$\mu$}};
+  }
+
+
+
+\end{tikzpicture}
+
+\end{document}
