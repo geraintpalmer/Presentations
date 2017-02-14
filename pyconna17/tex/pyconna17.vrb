@@ -1,0 +1,33 @@
+\tiny{
+\begin{columns}
+\begin{column}{0.45\textwidth}
+\begin{minted}{python}
+fig, ax = plt.subplots(1)
+X,Y = np.meshgrid(xs, ys)
+hm = ax.pcolor(X, Y, z, cmap='inferno', zorder=0)
+
+ticks = np.linspace(-2, 2, 9)
+ax.set_xticks([i+0.05 for i in ticks])
+ax.set_yticks([i+0.05 for i in ticks])
+ax.set_xticklabels(ticks)
+ax.set_yticklabels(ticks)
+
+cbar = fig.colorbar(hm)
+cbar.set_label(r"$f(x, y)$")
+
+title = r"$\left(x^2+3y^2\right)e^{-x^2-y^2}$"
+ax.set_title(title, fontsize=18)
+ax.set_xlabel(r"$x$", fontsize=16)
+ax.set_ylabel(r"$y$", fontsize=16)
+
+ax.grid(which='major', color='darkslategrey',
+        linestyle=':', linewidth=1, axis='both')
+
+plt.show()
+\end{minted}
+\end{column}
+\begin{column}{0.55\textwidth}
+\includegraphics[width=\textwidth]{../heatmap_7.pdf}
+\end{column}
+\end{columns}
+}

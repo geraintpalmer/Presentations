@@ -1,0 +1,21 @@
+\documentclass{standalone}
+% \documentclass{article}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+\draw[draw=none, fill=none] (0, 0) rectangle (6, 2);
+\node at (4, 1) {\LARGE{\textbf{Ordinal}}};
+
+\def \x {0.4}
+\draw[draw=black, fill=bronze2] (1.45-\x, 1.45-\x) rectangle (1.45+\x, 1.45+\x);
+\node at (1.45, 1.45) {3};
+\draw[draw=black, fill=silver2] (1.0-\x, 1.0-\x) rectangle (1.0+\x, 1.0+\x);
+\node at (1.0, 1.0) {2};
+\draw[draw=black, fill=gold2] (0.55-\x, 0.55-\x) rectangle (0.55+\x, 0.55+\x);
+\node at (0.55, 0.55) {1};
+\end{tikzpicture}
+
+\end{document}
