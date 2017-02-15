@@ -21,7 +21,7 @@
 \usepackage{booktabs}
 \usepackage{hyperref}
 
-
+\newcommand{\semitransp}[2][35]{\color{fg!#1}#2}
 
 \definecolor{lightblue}{RGB}{124,190,255}
 \definecolor{darkgreen}{RGB}{24,145,0}
@@ -72,7 +72,7 @@
 \begin{center}
 \includestandalone[width=\textwidth]{perceptualaccuracy}
 % \vspace{2cm}
-\tiny{\url{https://youtu.be/k_lvjRCOpJk?list=PLpX1jXuNTXGrjl6CxJ6Cly1GKO1su9yeD}}
+\textcolor{orange}{\small{\href{https://youtu.be/k_lvjRCOpJk?list=PLpX1jXuNTXGrjl6CxJ6Cly1GKO1su9yeD}{YouTube: Design Principles in Information Visualisation\newline (Prof. Jessie Kennedy)}}}
 \end{center}
 \end{frame}
 
@@ -431,16 +431,25 @@ plt.show()
 \end{frame}
 
 \begin{frame}
+\frametitle{Choosing Colormaps}
+\begin{center}
+\textcolor{orange}{
+\href{https://www.youtube.com/watch?v=xAoljeRJ3lU}{YouTube: A Better Default Colormap for Matplotlib -\newline SciPy 2015 (Nathaniel Smith and Stéfan van der Walt)}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}
 \begin{figure}
-    \frametitle{Choosing Colormaps}
+    % \frametitle{Choosing Colormaps}
     \begin{columns}
-	\begin{column}{0.5\textwidth}
+	\begin{column}{0.45\textwidth}
 		\begin{center}
 		\includegraphics[width=0.9\textwidth]{../testimage.jpg}
 		\end{center}
 	\end{column}
-	\begin{column}{0.5\textwidth}
-		\tiny{
+	\begin{column}{0.55\textwidth}
+		\scriptsize{
 		\begin{equation*}
 		\begin{pmatrix}
 		47 & 58 & 69 & 80 & 1 & 12 & 23 & 34 & 45 \\
@@ -457,17 +466,16 @@ plt.show()
 		}
 	\end{column}
 	\end{columns}
-	\begin{center}
-	\tiny{\url{https://www.youtube.com/watch?v=xAoljeRJ3lU}}
-	\end{center}
 \end{figure}
 \end{frame}
 
 \begin{frame}
+\begin{center}
+\semitransp[0]{Perceptually Uniform Sequencial Colormaps}
+\end{center}
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{center}
-\textit{Miscellaneous}
 \vfill
 \includegraphics[width=0.42\textwidth]{../church_jet.pdf}
 \includegraphics[width=0.58\textwidth]{../magicsquare_jet.pdf}\newline\newline
@@ -479,7 +487,6 @@ plt.show()
 \end{column}
 \begin{column}{0.5\textwidth}
 \begin{center}
-\textit{Sequencial}
 \vfill
 \includegraphics[width=0.42\textwidth]{../church_hot.pdf}
 \includegraphics[width=0.58\textwidth]{../magicsquare_hot.pdf}\newline\newline
@@ -493,10 +500,12 @@ plt.show()
 \end{frame}
 
 \begin{frame}
+\begin{center}
+\semitransp[0]{Perceptually Uniform Sequencial Colormaps}
+\end{center}
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{center}
-\textit{Sequencial}
 \vfill
 \includegraphics[width=0.42\textwidth]{../church_gray.pdf}
 \includegraphics[width=0.58\textwidth]{../magicsquare_gray.pdf}\newline\newline
@@ -508,7 +517,6 @@ plt.show()
 \end{column}
 \begin{column}{0.5\textwidth}
 \begin{center}
-\textit{Diverging}
 \vfill
 \includegraphics[width=0.42\textwidth]{../church_coolwarm.pdf}
 \includegraphics[width=0.58\textwidth]{../magicsquare_coolwarm.pdf}\newline\newline
