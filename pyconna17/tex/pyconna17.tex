@@ -39,7 +39,7 @@
 
 \title
 {Producing Pretty Plots in Python}
-\author{Geraint Ian Palmer}
+\author{Geraint Ian Palmer\newline \footnotesize{\textcolor{orange}{\href{https://twitter.com/GeraintPalmer}{@GeraintPalmer}}}}
 \date{PyCon Namibia 2017}
 \titlegraphic{\includegraphics[width=2.7cm]{../anscombeI.pdf} \includegraphics[width=2.7cm]{../anscombeII.pdf} \includegraphics[width=2.7cm]{../anscombeIII.pdf} \includegraphics[width=2.7cm]{../anscombeIV.pdf}}
 
@@ -54,46 +54,14 @@
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{center}
-\includestandalone[width=0.75\textwidth]{nominal}
-\small{
-\begin{itemize}
-\setlength\itemsep{-0.2em}
-\item Discrete
-\item Mutually exclusive
-\item No numerical relevance
-\end{itemize}
-}
-\vspace{8mm}
-\includestandalone[width=0.75\textwidth]{quantitative}
-\small{
-\begin{itemize}
-\setlength\itemsep{-0.2em}
-\item Numeric, order \& distances
-\item No abslute zero (\textit{interval})
-\item Absolute zero (\textit{ratio})
-\end{itemize}
-}
+\includestandalone[width=0.9\textwidth]{nominal}\\
+\includestandalone[width=0.9\textwidth]{quantitative}
 \end{center}
 \end{column}
 \begin{column}{0.5\textwidth}
 \begin{center}
-\includestandalone[width=0.75\textwidth]{ordinal}
-\small{
-\begin{itemize}
-\setlength\itemsep{-0.2em}
-\item Order important
-\item Distances unquantifiable
-\item Typically non-numeric
-\end{itemize}
-}
-\vspace{8mm}
-\includestandalone[width=0.75\textwidth]{relational}
-\small{
-\begin{itemize}
-\setlength\itemsep{-0.2em}
-\item Describes relationships between discrete objects
-\end{itemize}
-}
+\includestandalone[width=0.9\textwidth]{ordinal}\\
+\includestandalone[width=0.9\textwidth]{relational}
 \end{center}
 \end{column}
 \end{columns}
@@ -101,9 +69,11 @@
 
 \begin{frame}
 \frametitle{Perceptual Accuracy}
+\begin{center}
 \includestandalone[width=\textwidth]{perceptualaccuracy}
 % \vspace{2cm}
 \tiny{\url{https://youtu.be/k_lvjRCOpJk?list=PLpX1jXuNTXGrjl6CxJ6Cly1GKO1su9yeD}}
+\end{center}
 \end{frame}
 
 
@@ -126,6 +96,10 @@
 \includestandalone[width=\textwidth]{anatomy}
 \end{frame}
 
+\begin{frame}
+\frametitle{Anatomy of a Plot}
+\includestandalone[width=\textwidth]{subplots}
+\end{frame}
 
 \begin{frame}[fragile]
 \frametitle{Women's 200m Olympic Medallists}
@@ -247,8 +221,8 @@ ax.plot(dates, bronze, c='sienna')
 
 
 
-plt.xticks(dates, rotation='vertical')
-ax.set_xlim([1946, 2010])
+ax.set_xticks(dates)
+ax.set_xticklabels(dates, rotation='vertical')
 
 
 
@@ -285,8 +259,8 @@ ax.plot(dates, bronze, c='sienna')
 
 
 
-plt.xticks(dates, rotation='vertical')
-ax.set_xlim([1946, 2010])
+ax.set_xticks(dates)
+ax.set_xticklabels(dates, rotation='vertical')
 
 ax.set_xlabel("Year")
 ax.set_ylabel("Time")
@@ -323,8 +297,8 @@ ax.scatter(usa_x, usa_y, lw=0.8,
 
 
 
-plt.xticks(dates, rotation='vertical')
-ax.set_xlim([1946, 2010])
+ax.set_xticks(dates)
+ax.set_xticklabels(dates, rotation='vertical')
 
 ax.set_xlabel("Year")
 ax.set_ylabel("Time")
@@ -362,8 +336,8 @@ ax.scatter(usa_x, usa_y, lw=0.8,
 
 
 
-plt.xticks(dates, rotation='vertical')
-ax.set_xlim([1946, 2010])
+ax.set_xticks(dates)
+ax.set_xticklabels(dates, rotation='vertical')
 
 ax.set_xlabel("Year")
 ax.set_ylabel("Time")
@@ -400,8 +374,8 @@ ax.scatter(usa_x, usa_y, lw=0.8,
 
 plt.legend()
 
-plt.xticks(dates, rotation='vertical')
-ax.set_xlim([1946, 2010])
+ax.set_xticks(dates)
+ax.set_xticklabels(dates, rotation='vertical')
 
 ax.set_xlabel("Year")
 ax.set_ylabel("Time")
@@ -439,8 +413,8 @@ ax.scatter(usa_x, usa_y, lw=0.8,
 
 plt.legend()
 
-plt.xticks(dates, rotation='vertical')
-ax.set_xlim([1946, 2010])
+ax.set_xticks(dates)
+ax.set_xticklabels(dates, rotation='vertical')
 
 ax.set_xlabel("Year")
 ax.set_ylabel("Time")
@@ -484,7 +458,7 @@ plt.show()
 	\end{column}
 	\end{columns}
 	\begin{center}
-	\url{https://www.youtube.com/watch?v=xAoljeRJ3lU}
+	\tiny{\url{https://www.youtube.com/watch?v=xAoljeRJ3lU}}
 	\end{center}
 \end{figure}
 \end{frame}
@@ -878,23 +852,34 @@ plt.show()
 
 
 
-\begin{frame}
-\frametitle{Thanks}
+\begin{frame}{{}}
 \begin{center}
 \includegraphics[width=0.21\textwidth]{cflogo}
 \hspace{10mm}
 \includegraphics[width=0.2\textwidth]{napycon_logo}
+\vspace{5mm}
+\begin{columns}
+\begin{column}{0.7\textwidth}
 \begin{itemize}
-\item \href{http://www.cardiff.ac.uk/mathematics}{School of Mathematics - Cardiff University}
 \item \href{http://www.cardiff.ac.uk/about/our-profile/our-values/engagement/transforming-communities/the-phoenix-project}{Cardiff University Phoenix Project}
+\item \href{http://www.cardiff.ac.uk/mathematics}{Cardiff School of Mathematics}
 \item \href{https://na.pycon.org/}{PyCon Namibia 2017}
+\end{itemize}
+\end{column}
+\begin{column}{0.3\textwidth}
+\begin{itemize}
 \item \href{http://matplotlib.org/}{matplotlib}
 \item \href{http://www.numpy.org/}{numpy}
 \item \href{http://seaborn.pydata.org/}{seaborn}
 \item \href{http://jupyter.org/}{jupyter}
 \end{itemize}
+\end{column}
+\end{columns}
+\vspace{5mm}
+\textcolor{orange}{
 \url{www.geraintianpalmer.org.uk/talks}\\
 \href{https://twitter.com/GeraintPalmer}{@GeraintPalmer}
+}
 \end{center}
 \end{frame}
 
@@ -918,734 +903,5 @@ plt.show()
 \end{frame}
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%                                                                     %%%%%%%%%%%%
-%%%%%%%%%%%                         APPENDIX EXTRA BITS                         %%%%%%%%%%%%
-%%%%%%%%%%%                                                                     %%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-% \begin{frame}
-% \frametitle{Titanic Passengers}
-% \scriptsize{
-% \begin{center}
-% \begin{tabular}{lcccc}
-% \toprule
-% Name & Passenger Class & Age & Sex & Survived \\
-% \midrule
-% Allen, Miss Elisabeth Walton & 1st & 29.00 & female & 1 \\
-% Allison, Miss Helen Loraine & 1st & 2.00 & female & 0 \\
-% Allison, Mr Hudson Joshua Creighton & 1st & 30.00 & male & 0 \\
-% Anderson, Mr Harry & 1st & 47.00 & male & 1 \\
-% Andrews, Miss Kornelia Theodosia & 1st & 63.00 & female & 1 \\
-% $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
-% Zenni, Mr Philip & 3rd & 22.00 & male & 0 \\
-% Lievens, Mr Rene & 3rd & 24.00 & male & 0 \\
-% Zimmerman, Leo & 3rd & 29.00 & male & 0 \\
-% \bottomrule
-% \end{tabular}
-% \end{center}
-% }
-% \end{frame}
-
-% \begin{frame}[fragile]
-% \tiny{
-% \begin{columns}
-% \begin{column}{0.48\textwidth}
-% \begin{minted}{python}
-% fig, ax = plt.subplots(1)
-% ax.bar([1, 4, 7], male_survived, width=0.3)
-% ax.bar([2, 5, 8], male_died, width=0.3)
-% ax.bar([1, 4, 7], female_survived, width=0.3, bottom=male_survived)
-% ax.bar([2, 5, 8], female_died, width=0.3, bottom=male_died)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% plt.show()
-% \end{minted}
-% \end{column}
-% \begin{column}{0.52\textwidth}
-% \includegraphics[width=\textwidth]{../titanic_1.pdf}
-% \end{column}
-% \end{columns}
-% }
-% \end{frame}
-
-% \begin{frame}[fragile]
-% \tiny{
-% \begin{columns}
-% \begin{column}{0.48\textwidth}
-% \begin{minted}{python}
-% fig, ax = plt.subplots(1)
-% ax.bar([1, 4, 7], male_survived, width=0.3, color='darkorange')
-% ax.bar([2, 5, 8], male_died, width=0.3, color='darkorange')
-% ax.bar([1, 4, 7], female_survived, width=0.3, bottom=male_survived, color='seagreen')
-% ax.bar([2, 5, 8], female_died, width=0.3, bottom=male_died, color='seagreen')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% plt.show()
-% \end{minted}
-% \end{column}
-% \begin{column}{0.52\textwidth}
-% \includegraphics[width=\textwidth]{../titanic_2.pdf}
-% \end{column}
-% \end{columns}
-% }
-% \end{frame}
-
-% \begin{frame}[fragile]
-% \tiny{
-% \begin{columns}
-% \begin{column}{0.48\textwidth}
-% \begin{minted}{python}
-% fig, ax = plt.subplots(1)
-% ax.bar([1, 4, 7], male_survived, width=0.3, color='darkorange')
-% ax.bar([2, 5, 8], male_died, width=0.3, color='darkorange')
-% ax.bar([1, 4, 7], female_survived, width=0.3, bottom=male_survived, color='seagreen')
-% ax.bar([2, 5, 8], female_died, width=0.3, bottom=male_died, color='seagreen')
-
-% ax.set_xlim(0, 9)
-% plt.xticks([1.15, 1.45, 2.15, 2.45, 3.15, 3.45],
-%            ['Survived', 'Died']*3,
-%            rotation='vertical')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% plt.show()
-% \end{minted}
-% \end{column}
-% \begin{column}{0.52\textwidth}
-% \includegraphics[width=\textwidth]{../titanic_3.pdf}
-% \end{column}
-% \end{columns}
-% }
-% \end{frame}
-
-% \begin{frame}[fragile]
-% \tiny{
-% \begin{columns}
-% \begin{column}{0.48\textwidth}
-% \begin{minted}{python}
-% fig, ax = plt.subplots(1)
-% ax.bar([1, 4, 7], male_survived, width=0.3, color='darkorange', label="Male")
-% ax.bar([2, 5, 8], male_died, width=0.3, color='darkorange')
-% ax.bar([1, 4, 7], female_survived, width=0.3, bottom=male_survived, color='seagreen', label="Female")
-% ax.bar([2, 5, 8], female_died, width=0.3, bottom=male_died, color='seagreen')
-
-% ax.set_xlim(0, 9)
-% plt.xticks([1.15, 1.45, 2.15, 2.45, 3.15, 3.45],
-%            ['Survived', 'Died']*3,
-%            rotation='vertical')
-
-
-
-
-
-
-
-
-
-
-
-
-
-% ax.legend(loc=0, fontsize=14)
-
-
-
-
-
-% plt.show()
-% \end{minted}
-% \end{column}
-% \begin{column}{0.52\textwidth}
-% \includegraphics[width=\textwidth]{../titanic_4.pdf}
-% \end{column}
-% \end{columns}
-% }
-% \end{frame}
-
-
-% \begin{frame}[fragile]
-% \tiny{
-% \begin{columns}
-% \begin{column}{0.48\textwidth}
-% \begin{minted}{python}
-% fig, ax = plt.subplots(1)
-% ax.bar([1, 4, 7], male_survived, width=0.3, color='darkorange', label="Male")
-% ax.bar([2, 5, 8], male_died, width=0.3, color='darkorange')
-% ax.bar([1, 4, 7], female_survived, width=0.3, bottom=male_survived, color='seagreen', label="Female")
-% ax.bar([2, 5, 8], female_died, width=0.3, bottom=male_died, color='seagreen')
-
-% ax.set_xlim(0, 9)
-% plt.xticks([1.15, 1.45, 2.15, 2.45, 3.15, 3.45],
-%            ['Survived', 'Died']*3,
-%            rotation='vertical')
-
-
-
-
-
-
-
-
-
-
-
-
-
-% ax.legend(loc=0, fontsize=14)
-
-% ax.set_ylabel("Frequency")
-% ax.set_title("Breakdown of Titanic Survivors by Class and Gender",
-%               fontsize=16, y=1.15)
-
-% plt.show()
-% \end{minted}
-% \end{column}
-% \begin{column}{0.52\textwidth}
-% \includegraphics[width=\textwidth]{../titanic_5.pdf}
-% \end{column}
-% \end{columns}
-% }
-% \end{frame}
-
-% \begin{frame}[fragile]
-% \tiny{
-% \begin{columns}
-% \begin{column}{0.48\textwidth}
-% \begin{minted}{python}
-% fig, ax = plt.subplots(1)
-% ax.bar([1, 4, 7], male_survived, width=0.3, color='darkorange', label="Male")
-% ax.bar([2, 5, 8], male_died, width=0.3, color='darkorange')
-% ax.bar([1, 4, 7], female_survived, width=0.3, bottom=male_survived, color='seagreen', label="Female")
-% ax.bar([2, 5, 8], female_died, width=0.3, bottom=male_died, color='seagreen')
-
-% ax.set_xlim(0, 9)
-% plt.xticks([1.15, 1.45, 2.15, 2.45, 3.15, 3.45],
-%            ['Survived', 'Died']*3,
-%            rotation='vertical')
-
-% ax.set_xticks([3, 6], minor=True)
-% ax.xaxis.grid(False, which='major')
-% ax.xaxis.grid(True, which='minor')
-
-% ax2 = ax.twiny()
-% plt.sca(ax2)
-% plt.xticks([2, 5, 8],
-%            ["1st Class", "2nd Class", "3rd Class"],
-%            fontsize=12)
-% ax2.set_xlim(0, 9)
-% ax2.xaxis.grid(False, which='both')
-
-% ax.legend(loc=0, fontsize=14)
-
-% ax.set_ylabel("Frequency")
-% ax.set_title("Breakdown of Titanic Survivors by Class and Gender",
-%               fontsize=16, y=1.15)
-
-% plt.show()
-% \end{minted}
-% \end{column}
-% \begin{column}{0.52\textwidth}
-% \includegraphics[width=\textwidth]{../titanic_6.pdf}
-% \end{column}
-% \end{columns}
-% }
-% \end{frame}
-
-
-
-% \begin{frame}
-% \frametitle{New York Choral Society Singers}
-% \footnotesize{
-% \begin{center}
-% \begin{tabular}{cc}
-% \toprule
-% Height (inches) & Voice \\
-% \midrule
-% 64 & Soprano \\
-% 62 & Soprano \\
-% 66 & Soprano \\
-% 65 & Soprano \\
-% 60 & Soprano \\
-% 61 & Soprano \\
-% $\vdots$ & $\vdots$ \\
-% 71 & Bass \\
-% 74 & Bass \\
-% 75 & Bass \\
-% \bottomrule
-% \end{tabular}
-% \end{center}
-% }
-% \end{frame}
-
-
-
-% \begin{frame}[fragile]
-% \tiny{
-% \begin{columns}
-% \begin{column}{0.45\textwidth}
-% \begin{minted}{python}
-% fig, ax = plt.subplots(1)
-
-
-
-% for i, data in enumerate(heights):
-
-
-
-
-%     bp = ax.boxplot(
-%         data, positions=[i+0.5], widths=0.8,
-%         showmeans=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% plt.show()
-% \end{minted}
-% \end{column}
-% \begin{column}{0.55\textwidth}
-% \includegraphics[width=\textwidth]{../singers_1.pdf}
-% \end{column}
-% \end{columns}
-% }
-% \end{frame}
-
-% \begin{frame}[fragile]
-% \tiny{
-% \begin{columns}
-% \begin{column}{0.45\textwidth}
-% \begin{minted}{python}
-% fig, ax = plt.subplots(1)
-
-
-
-% for i, data in enumerate(heights):
-
-
-
-
-%     bp = ax.boxplot(
-%         data, positions=[i+0.5], widths=0.8,
-%         showmeans=True)
-
-
-
-
-
-
-
-
-
-
-
-% ax.set_xlim(0, 4)
-
-
-
-
-
-
-
-
-
-
-
-% plt.show()
-% \end{minted}
-% \end{column}
-% \begin{column}{0.55\textwidth}
-% \includegraphics[width=\textwidth]{../singers_2.pdf}
-% \end{column}
-% \end{columns}
-% }
-% \end{frame}
-
-% \begin{frame}[fragile]
-% \tiny{
-% \begin{columns}
-% \begin{column}{0.45\textwidth}
-% \begin{minted}{python}
-% fig, ax = plt.subplots(1)
-
-
-
-% for i, data in enumerate(heights):
-
-
-
-
-%     bp = ax.boxplot(
-%         data, positions=[i+0.5], widths=0.8,
-%         showmeans=True)
-
-
-
-
-
-
-
-
-
-
-
-% ax.set_xlim(0, 4)
-% ax.set_xticks([i+0.5 for i in range(4)])
-% ax.set_xticklabels(voices, fontsize=12)
-
-
-
-
-
-
-
-
-
-% plt.show()
-% \end{minted}
-% \end{column}
-% \begin{column}{0.55\textwidth}
-% \includegraphics[width=\textwidth]{../singers_3.pdf}
-% \end{column}
-% \end{columns}
-% }
-% \end{frame}
-
-
-% \begin{frame}[fragile]
-% \tiny{
-% \begin{columns}
-% \begin{column}{0.45\textwidth}
-% \begin{minted}{python}
-% fig, ax = plt.subplots(1)
-
-
-
-% for i, data in enumerate(heights):
-
-%     meanpointprops = dict(
-%         marker='*', markeredgecolor='r',
-%         markerfacecolor='r', markersize=15)
-%     bp = ax.boxplot(
-%         data, positions=[i+0.5], widths=0.8,
-%         meanprops=meanpointprops, showmeans=True)
-
-
-
-
-%     plt.setp(bp['boxes'], color='r')
-%     plt.setp(bp['whiskers'], color='r')
-%     plt.setp(bp['medians'], color='r')
-%     plt.setp(bp['fliers'], color='r')
-%     plt.setp(bp['caps'], color='r')
-
-
-% ax.set_xlim(0, 4)
-% ax.set_xticks([i+0.5 for i in range(4)])
-% ax.set_xticklabels(voices, fontsize=12)
-
-
-
-
-
-
-
-
-
-% plt.show()
-% \end{minted}
-% \end{column}
-% \begin{column}{0.55\textwidth}
-% \includegraphics[width=\textwidth]{../singers_4.pdf}
-% \end{column}
-% \end{columns}
-% }
-% \end{frame}
-
-% \begin{frame}[fragile]
-% \tiny{
-% \begin{columns}
-% \begin{column}{0.45\textwidth}
-% \begin{minted}{python}
-% fig, ax = plt.subplots(1)
-
-
-
-% for i, data in enumerate(heights):
-
-%     meanpointprops = dict(
-%         marker='*', markeredgecolor='r',
-%         markerfacecolor='r', markersize=15)
-%     bp = ax.boxplot(
-%         data, positions=[i+0.5], widths=0.8,
-%         meanprops=meanpointprops, showmeans=True)
-%     vp = ax.violinplot(
-%         data, positions=[i+0.5], widths=0.8,
-%         showmeans=False, showextrema=False,
-%         showmedians=False)
-%     plt.setp(bp['boxes'], color='r')
-%     plt.setp(bp['whiskers'], color='r')
-%     plt.setp(bp['medians'], color='r')
-%     plt.setp(bp['fliers'], color='r')
-%     plt.setp(bp['caps'], color='r')
-%     plt.setp(vp['bodies'], color='r')
-
-% ax.set_xlim(0, 4)
-% ax.set_xticks([i+0.5 for i in range(4)])
-% ax.set_xticklabels(voices, fontsize=12)
-
-
-
-
-
-
-
-
-
-% plt.show()
-% \end{minted}
-% \end{column}
-% \begin{column}{0.55\textwidth}
-% \includegraphics[width=\textwidth]{../singers_5.pdf}
-% \end{column}
-% \end{columns}
-% }
-% \end{frame}
-
-
-% \begin{frame}[fragile]
-% \tiny{
-% \begin{columns}
-% \begin{column}{0.45\textwidth}
-% \begin{minted}{python}
-% fig, ax = plt.subplots(1)
-
-
-
-% for i, data in enumerate(heights):
-%     c = cm.viridis((np.mean(data) - miny)/(maxy - miny))
-%     meanpointprops = dict(
-%         marker='*', markeredgecolor=c,
-%         markerfacecolor=c, markersize=15)
-%     bp = ax.boxplot(
-%         data, positions=[i+0.5], widths=0.8,
-%         meanprops=meanpointprops, showmeans=True)
-%     vp = ax.violinplot(
-%         data, positions=[i+0.5], widths=0.8,
-%         showmeans=False, showextrema=False,
-%         showmedians=False)
-%     plt.setp(bp['boxes'], color=c)
-%     plt.setp(bp['whiskers'], color=c)
-%     plt.setp(bp['medians'], color=c)
-%     plt.setp(bp['fliers'], color=c)
-%     plt.setp(bp['caps'], color=c)
-%     plt.setp(vp['bodies'], color=c)
-
-% ax.set_xlim(0, 4)
-% ax.set_xticks([i+0.5 for i in range(4)])
-% ax.set_xticklabels(voices, fontsize=12)
-
-
-
-
-
-
-
-
-
-% plt.show()
-% \end{minted}
-% \end{column}
-% \begin{column}{0.55\textwidth}
-% \includegraphics[width=\textwidth]{../singers_6.pdf}
-% \end{column}
-% \end{columns}
-% }
-% \end{frame}
-
-% \begin{frame}[fragile]
-% \tiny{
-% \begin{columns}
-% \begin{column}{0.45\textwidth}
-% \begin{minted}{python}
-% fig, ax = plt.subplots(1)
-% sm = plt.cm.ScalarMappable(cmap=cm.viridis)
-% sm._A = []
-
-% for i, data in enumerate(heights):
-%     c = cm.viridis((np.mean(data) - miny)/(maxy - miny))
-%     meanpointprops = dict(
-%         marker='*', markeredgecolor=c,
-%         markerfacecolor=c, markersize=15)
-%     bp = ax.boxplot(
-%         data, positions=[i+0.5], widths=0.8,
-%         meanprops=meanpointprops, showmeans=True)
-%     vp = ax.violinplot(
-%         data, positions=[i+0.5], widths=0.8,
-%         showmeans=False, showextrema=False,
-%         showmedians=False)
-%     plt.setp(bp['boxes'], color=c)
-%     plt.setp(bp['whiskers'], color=c)
-%     plt.setp(bp['medians'], color=c)
-%     plt.setp(bp['fliers'], color=c)
-%     plt.setp(bp['caps'], color=c)
-%     plt.setp(vp['bodies'], color=c)
-
-% ax.set_xlim(0, 4)
-% ax.set_xticks([i+0.5 for i in range(4)])
-% ax.set_xticklabels(voices, fontsize=12)
-
-
-
-
-% cbar = fig.colorbar(sm, alpha=0.3)
-% cbar.set_ticks([0, 0.5, 1])
-% cbar.ax.set_yticklabels([miny, mid, maxy])
-
-
-% plt.show()
-% \end{minted}
-% \end{column}
-% \begin{column}{0.55\textwidth}
-% \includegraphics[width=\textwidth]{../singers_7.pdf}
-% \end{column}
-% \end{columns}
-% }
-% \end{frame}
-
-% \begin{frame}[fragile]
-% \tiny{
-% \begin{columns}
-% \begin{column}{0.45\textwidth}
-% \begin{minted}{python}
-% fig, ax = plt.subplots(1)
-% sm = plt.cm.ScalarMappable(cmap=cm.viridis)
-% sm._A = []
-
-% for i, data in enumerate(heights):
-%     c = cm.viridis((np.mean(data) - miny)/(maxy - miny))
-%     meanpointprops = dict(
-%         marker='*', markeredgecolor=c,
-%         markerfacecolor=c, markersize=15)
-%     bp = ax.boxplot(
-%         data, positions=[i+0.5], widths=0.8,
-%         meanprops=meanpointprops, showmeans=True)
-%     vp = ax.violinplot(
-%         data, positions=[i+0.5], widths=0.8,
-%         showmeans=False, showextrema=False,
-%         showmedians=False)
-%     plt.setp(bp['boxes'], color=c)
-%     plt.setp(bp['whiskers'], color=c)
-%     plt.setp(bp['medians'], color=c)
-%     plt.setp(bp['fliers'], color=c)
-%     plt.setp(bp['caps'], color=c)
-%     plt.setp(vp['bodies'], color=c)
-
-% ax.set_xlim(0, 4)
-% ax.set_xticks([i+0.5 for i in range(4)])
-% ax.set_xticklabels(voices, fontsize=12)
-
-% ax.set_ylabel("Height in Inches")
-% ax.set_title("Heights of Singers in the New York Choral Society", fontsize=16, y=1.05)
-
-% cbar = fig.colorbar(sm, alpha=0.3)
-% cbar.set_ticks([0, 0.5, 1])
-% cbar.ax.set_yticklabels([miny, mid, maxy])
-% cbar.set_label("Average Height")
-
-% plt.show()
-% \end{minted}
-% \end{column}
-% \begin{column}{0.55\textwidth}
-% \includegraphics[width=\textwidth]{../singers_8.pdf}
-% \end{column}
-% \end{columns}
-% }
-% \end{frame}
 
 \end{document}

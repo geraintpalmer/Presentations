@@ -22,3 +22,29 @@ https://www.youtube.com/watch?v=k_lvjRCOpJk&feature=youtu.be&list=PLpX1jXuNTXGrj
 https://vincentarelbundock.github.io/Rdatasets/datasets.html
 http://www.databaseolympics.com/
 https://en.wikipedia.org/wiki/Magic_square
+
+
+
+
+
+
+
+
+
+Nominal
++ Discrete
++ Mutually exclusive
++ No numerical relevance
+
+Quantitative
++ Numeric, order \& distances
++ No abslute zero (\textit{interval})
++ Absolute zero
+
+Ordinal
++ Order important
++ Distances unquantifiable
++ Typically non-numeric
+
+Relational
++ Describes relationships between discrete objects
