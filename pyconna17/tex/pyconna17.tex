@@ -372,7 +372,7 @@ ax.scatter(usa_x, usa_y, lw=0.8,
            marker='*', s=100,
            zorder=2)
 
-plt.legend()
+ax.legend()
 
 ax.set_xticks(dates)
 ax.set_xticklabels(dates, rotation='vertical')
@@ -411,7 +411,7 @@ ax.scatter(usa_x, usa_y, lw=0.8,
            marker='*', s=100,
            zorder=2, label='USA Athletes')
 
-plt.legend()
+ax.legend()
 
 ax.set_xticks(dates)
 ax.set_xticklabels(dates, rotation='vertical')
@@ -451,17 +451,17 @@ plt.show()
 	\begin{column}{0.55\textwidth}
 		\scriptsize{
 		\begin{equation*}
-		\begin{pmatrix}
-		47 & 58 & 69 & 80 & 1 & 12 & 23 & 34 & 45 \\
-    	57 & 68 & 79 & 9 & 11 & 22 & 33 & 44 & 46 \\
-    	67 & 78 & 8 & 10 & 21 & 32 & 43 & 54 & 56 \\
-    	77 & 7 & 18 & 20 & 31 & 42 & 53 & 55 & 66 \\
-    	6 & 17 & 19 & 30 & 41 & 52 & 63 & 65 & 76 \\
-    	16 & 27 & 29 & 40 & 51 & 62 & 64 & 75 & 5 \\
-    	26 & 28 & 39 & 50 & 61 & 72 & 74 & 4 & 15 \\
-    	36 & 38 & 49 & 60 & 71 & 73 & 3 & 14 & 25 \\
-    	37 & 48 & 59 & 70 & 81 & 2 & 13 & 24 & 35
-		\end{pmatrix}
+    \begin{pmatrix}
+      37 & 48 & 59 & 70 & 81 & 2 & 13 & 24 & 35 \\
+      36 & 38 & 49 & 60 & 71 & 73 & 3 & 14 & 25 \\
+      26 & 28 & 39 & 50 & 61 & 72 & 74 & 4 & 15 \\
+      16 & 27 & 29 & 40 & 51 & 62 & 64 & 75 & 5 \\
+      6 & 17 & 19 & 30 & 41 & 52 & 63 & 65 & 76 \\
+      77 & 7 & 18 & 20 & 31 & 42 & 53 & 55 & 66 \\
+      67 & 78 & 8 & 10 & 21 & 32 & 43 & 54 & 56 \\
+      57 & 68 & 79 & 9 & 11 & 22 & 33 & 44 & 46 \\
+      47 & 58 & 69 & 80 & 1 & 12 & 23 & 34 & 45
+    \end{pmatrix}
 		\end{equation*}
 		}
 	\end{column}
@@ -566,21 +566,6 @@ plt.show()
 $f(x, y) = -\left(x^2+3y^2\right)e^{-x^2-y^2}$
 \end{center}
 \vfill
-\tiny{
-\begin{columns}
-\begin{column}{0.35\textwidth}
-\begin{minted}{python}
-xs = np.arange(-2, 2.2, 0.1)
-ys = np.arange(-2, 2.2, 0.1)
-
-z = []
-for y in ys[:-1]:
-    z.append([])
-    for x in xs[:-1]:
-        z[-1].append(f(x, y))
-\end{minted}
-\end{column}
-\begin{column}{0.65\textwidth}
 \begin{equation*}
 \begin{pmatrix}
 -0.005 & -0.007 & -0.010 & \cdots & -0.010 & -0.007 & -0.005 \\
@@ -592,9 +577,6 @@ for y in ys[:-1]:
 -0.005 & -0.007 & -0.010 & \cdots & -0.010 & -0.007 & -0.005
 \end{pmatrix}
 \end{equation*}
-\end{column}
-\end{columns}
-}
 \vfill
 \end{frame}
 
@@ -605,9 +587,7 @@ for y in ys[:-1]:
 \begin{column}{0.45\textwidth}
 \begin{minted}{python}
 fig, ax = plt.subplots(1)
-
 hm = ax.pcolor(z)
-
 
 
 
@@ -641,9 +621,7 @@ plt.show()
 \begin{column}{0.45\textwidth}
 \begin{minted}{python}
 fig, ax = plt.subplots(1)
-X,Y = np.meshgrid(xs, ys)
-hm = ax.pcolor(X, Y, z)
-
+hm = ax.pcolor(z, cmap='inferno')
 
 
 
@@ -677,14 +655,12 @@ plt.show()
 \begin{column}{0.45\textwidth}
 \begin{minted}{python}
 fig, ax = plt.subplots(1)
-X,Y = np.meshgrid(xs, ys)
-hm = ax.pcolor(X, Y, z, cmap='inferno')
+hm = ax.pcolor(z, cmap='inferno')
 
-
-
-
-
-
+ax.set_xticks([i*5 + 0.5 for i in range(9)])
+ax.set_yticks([i*5 + 0.5 for i in range(9)])
+ax.set_xticklabels(ticks)
+ax.set_yticklabels(ticks)
 
 
 
@@ -713,16 +689,14 @@ plt.show()
 \begin{column}{0.45\textwidth}
 \begin{minted}{python}
 fig, ax = plt.subplots(1)
-X,Y = np.meshgrid(xs, ys)
-hm = ax.pcolor(X, Y, z, cmap='inferno')
+hm = ax.pcolor(z, cmap='inferno')
 
-ticks = np.linspace(-2, 2, 9)
-ax.set_xticks([i+0.05 for i in ticks])
-ax.set_yticks([i+0.05 for i in ticks])
+ax.set_xticks([i*5 + 0.5 for i in range(9)])
+ax.set_yticks([i*5 + 0.5 for i in range(9)])
 ax.set_xticklabels(ticks)
 ax.set_yticklabels(ticks)
 
-
+cbar = fig.colorbar(hm)
 
 
 
@@ -749,12 +723,10 @@ plt.show()
 \begin{column}{0.45\textwidth}
 \begin{minted}{python}
 fig, ax = plt.subplots(1)
-X,Y = np.meshgrid(xs, ys)
-hm = ax.pcolor(X, Y, z, cmap='inferno')
+hm = ax.pcolor(z, cmap='inferno')
 
-ticks = np.linspace(-2, 2, 9)
-ax.set_xticks([i+0.05 for i in ticks])
-ax.set_yticks([i+0.05 for i in ticks])
+ax.set_xticks([i*5 + 0.5 for i in range(9)])
+ax.set_yticks([i*5 + 0.5 for i in range(9)])
 ax.set_xticklabels(ticks)
 ax.set_yticklabels(ticks)
 
@@ -785,12 +757,10 @@ plt.show()
 \begin{column}{0.45\textwidth}
 \begin{minted}{python}
 fig, ax = plt.subplots(1)
-X,Y = np.meshgrid(xs, ys)
-hm = ax.pcolor(X, Y, z, cmap='inferno')
+hm = ax.pcolor(z, cmap='inferno')
 
-ticks = np.linspace(-2, 2, 9)
-ax.set_xticks([i+0.05 for i in ticks])
-ax.set_yticks([i+0.05 for i in ticks])
+ax.set_xticks([i*5 + 0.5 for i in range(9)])
+ax.set_yticks([i*5 + 0.5 for i in range(9)])
 ax.set_xticklabels(ticks)
 ax.set_yticklabels(ticks)
 
@@ -821,12 +791,10 @@ plt.show()
 \begin{column}{0.45\textwidth}
 \begin{minted}{python}
 fig, ax = plt.subplots(1)
-X,Y = np.meshgrid(xs, ys)
-hm = ax.pcolor(X, Y, z, cmap='inferno', zorder=0)
+hm = ax.pcolor(z, cmap='inferno', zorder=0)
 
-ticks = np.linspace(-2, 2, 9)
-ax.set_xticks([i+0.05 for i in ticks])
-ax.set_yticks([i+0.05 for i in ticks])
+ax.set_xticks([i*5 + 0.5 for i in range(9)])
+ax.set_yticks([i*5 + 0.5 for i in range(9)])
 ax.set_xticklabels(ticks)
 ax.set_yticklabels(ticks)
 
@@ -850,9 +818,6 @@ plt.show()
 \end{columns}
 }
 \end{frame}
-
-
-
 
 
 

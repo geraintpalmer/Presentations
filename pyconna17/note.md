@@ -25,6 +25,9 @@ https://en.wikipedia.org/wiki/Magic_square
 
 
 
++ Colormaps are an inteface between your data and your brain.
++ Perceptually uniform: Sequencial, accurately represent data, works in black and white, fine for colourblind people.
+
 
 
 
