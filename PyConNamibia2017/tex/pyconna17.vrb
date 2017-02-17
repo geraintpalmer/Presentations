@@ -25,7 +25,7 @@ plt.show()
 \end{minted}
 \end{column}
 \begin{column}{0.55\textwidth}
-\includegraphics[width=\textwidth]{../heatmap_7.pdf}
+\includegraphics[width=\textwidth]{heatmap_7.pdf}
 \end{column}
 \end{columns}
 }
