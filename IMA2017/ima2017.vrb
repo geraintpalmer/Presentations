@@ -1,0 +1,16 @@
+\begin{minted}{python}
+import ciw
+
+N = ciw.create_network(
+    Arrival_distributions=[['Exponential', 6.0]],
+    Service_distributions=[['Exponential', 3.0]],
+    Transition_matrices=[[0.5]],
+    Number_of_servers=[3],
+    Queue_capacities=[2]
+)
+
+ciw.seed(1)
+Q = ciw.Simulation(N, deadlock_detector='StateDigraph')
+Q.simulate_until_deadlock()
+Q.times_to_deadlock
+\end{minted}
