@@ -1,0 +1,46 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\def\pop{10}
+\def\pf{\pop*0.2}
+\def\po{\pop*0.35}
+\def\pa{\pop*0.6}
+
+\draw (0, 0) rectangle (\pop, \pop);
+\draw (0, \pf) -- (\pop, \pf);
+\draw (\pop-\po, \pf) -- (\pop-\po, \pop);
+\draw (\pop-\po, \pop-\pa) -- (\pop, \pop-\pa);
+
+\node at (\pop/2, \pf/2) {Frailty SWP};
+\node at ({(\pop-\po)/2}, {(\pop-\pf)/2 + \pf}) {Not Offered};
+\node at ({\pop-(\po/2)}, {\pop-\pa-((\pop-\pa-\pf)/2)}) {Offered + Refused};
+\node at ({\pop-(\po/2)}, {\pop-(\pa/2)}) {Offered + Accepted};
+
+\node (pf) at (\pop*1.05, \pf/2) {$p_f$};
+\node (po) at ({\pop-(\po/2)}, \pop*1.05)  {$p_o$};
+\node (pa) at (\pop*1.05, {\pop-(\pa/2)}) {$p_a$};
+
+\draw[->] (pf) -- (\pop*1.05, \pf);
+\draw[->] (pf) -- (\pop*1.05, 0);
+\draw[dotted] (\pop, \pf) -- (\pop*1.1, \pf);
+\draw[dotted] (\pop, 0) -- (\pop*1.1, 0);
+
+\draw[->] (po) -- (\pop, \pop*1.05);
+\draw[->] (po) -- (\pop-\po, \pop*1.05);
+\draw[dotted] (\pop, \pop) -- (\pop, \pop*1.1);
+\draw[dotted] (\pop-\po, \pop) -- (\pop-\po, \pop*1.1);
+
+\draw[->] (pa) -- (\pop*1.05, \pop-\pa);
+\draw[->] (pa) -- (\pop*1.05, \pop);
+\draw[dotted] (\pop, \pop-\pa) -- (\pop*1.1, \pop-\pa);
+\draw[dotted] (\pop, \pop) -- (\pop*1.1, \pop);
+
+
+\end{tikzpicture}
+
+\end{document}
