@@ -1,0 +1,51 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\node[align=center] at (0, 0) {\includegraphics{bed}$\quad$\includegraphics{bed}\\\includegraphics{bed}$\quad$\includegraphics{bed}\\\includegraphics{bed}$\quad$\includegraphics{bed}\\\includegraphics{bed}$\quad$\includegraphics{bed}\\\includegraphics{bed}$\quad$\includegraphics{bed}};
+
+\draw[ultra thick, -triangle 90, draw=blue!50!cyan] (-6, -4) -- (-3, -4);
+\node[text=blue!50!cyan] at (-4.5, -3.5) {$\frac{1}{2}$ per hour};
+\draw[ultra thick, -triangle 90, draw=red!50!white] (-6, -1.6) -- (-3, -1.6);
+\node[text=red!50!white] at (-4.5, -1.1) {$2$ per hour};
+\draw[ultra thick, -triangle 90, draw=green!80!black] (-6, 0.8) -- (-3, 0.8);
+\node[text=green!80!black] at (-4.5, 1.3) {$5$ per hour};
+\draw[ultra thick, -triangle 90, draw=orange!50!yellow] (-6, 3.2) -- (-3, 3.2);
+\node[text=orange!50!yellow] at (-4.5, 3.7) {$10$ per hour};
+
+\draw[thick, decorate,decoration={brace,amplitude=10pt,mirror},xshift=-4pt,yshift=0pt] (-6, 1.5) -- (-6, -1.8);
+\node[rotate=90] at (-7, -4) {Low Priority};
+\node[rotate=90] at (-7, 0) {Medium Priority};
+\node[rotate=90] at (-7, 3.2) {High Priority};
+
+\only<1>{
+\node at (4, -4) {\includegraphics[width=3cm]{cls3}};
+\node at (4, -1.6) {\includegraphics[width=3cm]{cls2}};
+\node at (4, 0.8) {\includegraphics[width=3cm]{cls1}};
+\node at (4, 3.2) {\includegraphics[width=3cm]{cls0}};
+\node[text=white] at (4, 4.2) {Gamma(4, 0.5)};
+}
+
+\only<2>{
+\node at (4, -4) {\includegraphics[width=3cm]{cls3d}};
+\node[text=blue!50!cyan] at (4, -3) {Gamma(4, 0.5)};
+\node at (4, -1.6) {\includegraphics[width=3cm]{cls2d}};
+\node[text=red!50!white] at (4, -0.6) {Lognormal(-1.2, 0.25)};
+\node at (4, 0.8) {\includegraphics[width=3cm]{cls1d}};
+\node[text=green!80!black] at (4, 1.8) {Lognormal(0, 0.4)};
+\node at (4, 3.2) {\includegraphics[width=3cm]{cls0d}};
+\node[text=orange!50!yellow] at (4, 4.2) {Gamma(3, 0.1)};
+}
+
+\draw[ultra thick, -triangle 90, draw=blue!50!cyan] (6, -4) -- (9, -4);
+\draw[ultra thick, -triangle 90, draw=red!50!white] (6, -1.6) -- (9, -1.6);
+\draw[ultra thick, -triangle 90, draw=green!80!black] (6, 0.8) -- (9, 0.8);
+\draw[ultra thick, -triangle 90, draw=orange!50!yellow] (6, 3.2) -- (9, 3.2);
+
+\end{tikzpicture}
+
+\end{document}

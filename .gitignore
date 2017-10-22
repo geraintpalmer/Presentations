@@ -8,3 +8,4 @@
 *.toc
 *.DS_store
 *.ipynb_checkpoints*
+*_minted-pyconuk2017*

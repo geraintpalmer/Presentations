@@ -1,0 +1,12 @@
+\begin{minted}{bash}
+pip install pandas
+pip install numpy
+pip install matplotlib
+pip install scipy==0.19.1
+pip install sklearn==0.17.1
+pip install pulp==1.6.8
+pip install networkx==1.11
+pip install ciw==1.1.3
+pip install nashpy==0.0.11
+\end{minted}
+\footnotesize{Emojis thanks to Twemoji.}
