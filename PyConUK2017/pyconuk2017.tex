@@ -60,7 +60,7 @@
 }
 
 \begin{frame}[fragile]
-  \frametitle{The Basics}
+  \frametitle{Data}
   \begin{center}
     \begin{tabular}{llrr}
     \toprule
@@ -79,10 +79,10 @@
     \begin{minted}{python}
       >>> import scipy.stats
 
-      >>> scipy.stats.ttest_ind(
+      >>> ttest = scipy.stats.ttest_ind(
       ...    df[df['Sex']=='M']['Height'],
-      ...    df[df['Sex']=='F']['Height']
-      ... ).pvalue
+      ...    df[df['Sex']=='F']['Height'])
+      >>> ttest.pvalue
       0.070033630470421021
     \end{minted}
   }
@@ -125,14 +125,14 @@
 }
 
 \begin{frame}
-  $$\underline{x} = \left[F_9, F_{10}, F_{11}, P_9, P_{10}, P_{11}, P_{12}, P_{1}, P_{2}, P_{3}\right]$$
+  $$x = \left[F_9, F_{10}, F_{11}, P_9, P_{10}, P_{11}, P_{12}, P_{1}, P_{2}, P_{3}\right]$$
 
   $$C = \left[\text{\textsterling} 60, \text{\textsterling} 60, \text{\textsterling} 60, \text{\textsterling} 32, \text{\textsterling} 32, \text{\textsterling} 32, \text{\textsterling} 32, \text{\textsterling} 32, \text{\textsterling} 32, \text{\textsterling} 32\right]$$
 
   \begin{columns}
     \begin{column}{0.5\textwidth}
       $$A =
-      \begin{bmatrix}{1}
+      \begin{bmatrix}
         1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
         1 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
         1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \\
@@ -146,14 +146,14 @@
       \end{bmatrix}$$
     \end{column}
     \begin{column}{0.3\textwidth}
-      $$B = \begin{bmatrix}{1} 7 \\ 8 \\ 9 \\ 9 \\ 7 \\ 5 \\ 4 \\ 8 \\ 4 \\ 3 \end{bmatrix}$$
+      $$B = \left[\;\begin{matrix} 7 \\ 8 \\ 9 \\ 9 \\ 7 \\ 5 \\ 4 \\ 8 \\ 4 \\ 3 \end{matrix}\;\right]$$
     \end{column}
     \begin{column}{0.2\textwidth}
       min $Cx$\\
       subject to:
       \begin{align*}
-        A \underline{x} &\geq B\\
-        \underline{x} &\geq \underline{0}
+        A x &\geq B\\
+        x &\geq 0
       \end{align*}
     \end{column}
   \end{columns}
@@ -172,10 +172,10 @@
 
 
     >>> for j in range(10):
-    ...    prob += sum(A[j][i] * x[i] for i in range(10)) >= B[j]
+    ...     prob += sum(A[j][i] * x[i] for i in range(10)) >= B[j]
 
     >>> for j in range(10):
-    ...  prob += x[j] >= 0
+    ...     prob += x[j] >= 0
 
 
     >>> prob.solve()
@@ -194,7 +194,7 @@
 
 \frame{
   \begin{center}
-      \includestandalone[width=0.7\textwidth]{rhondda_graph}
+      \includestandalone[width=0.85\textwidth]{rhondda_graph}
   \end{center}
 }
 
@@ -204,8 +204,8 @@
 >>> import networkx as nx
 
 >>> towns = ['Porth', 'Wattstown', 'Penrhys', 'Maerdy',
-...     'Penygraig', 'Tonypandy', 'Llwynypia', 'Ystrad'
-...     'Treorchy', 'Treherbert']
+...          'Penygraig', 'Tonypandy', 'Llwynypia',
+...          'Ystrad', 'Treorchy', 'Treherbert']
 
 >>> D = nx.from_numpy_matrix(distances)
 >>> D = nx.relabel_nodes(D,
@@ -285,7 +285,7 @@
 \end{minted}
 }
 \begin{center}
-  \includegraphics[width=0.7\textwidth]{SIR}
+  \includegraphics[width=0.9\textwidth]{SIR}
 \end{center}
 \end{frame}
 
@@ -318,17 +318,19 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{My PhD Work...}
+\frametitle{Newport Older Person's Pathway Analysis}
 \begin{center}
 \includestandalone[width=0.7\textwidth]{ophcn_map}
 \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
+\begin{columns}
+\begin{column}{0.6\textwidth}
 \begin{minted}{bash}
-pip install pandas
-pip install numpy
-pip install matplotlib
+pip install pandas==0.18.0
+pip install numpy==1.13.3
+pip install matplotlib==2.0.0
 pip install scipy==0.19.1
 pip install sklearn==0.17.1
 pip install pulp==1.6.8
@@ -336,6 +338,15 @@ pip install networkx==1.11
 pip install ciw==1.1.3
 pip install nashpy==0.0.11
 \end{minted}
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{center}
+\textcolor{darkorange}{\href{https://twitter.com/GeraintPalmer}{@GeraintPalmer}}
+\end{center}
+\end{column}
+\end{columns}
+\vspace{10mm}
+\textcolor{darkorange}{\url{http://www.geraintianpalmer.org.uk/talks/}}\\
 \footnotesize{Emojis thanks to Twemoji.}
 \end{frame}
 
