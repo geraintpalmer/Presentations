@@ -1,0 +1,21 @@
+\begin{minted}[bgcolor=bgcol, fontsize=\scriptsize]{python}
+N = ciw.create_network(
+    Arrival_distributions={
+        'Class 0': [['Exponential', 2.0], ['Exponential', 4.0]],
+        'Class 1': [['Exponential', 2.0], ['Exponential', 3.0]]},
+    Service_distributions={
+        'Class 0': [['Deterministic', 0.5], ['Uniform', 0.2, 0.9]],
+        'Class 1': [['Exponential', 2.0], ['Uniform', 0.3, 0.7]]},
+    Transition_matrices={
+        'Class 0': [[0.0, 0.0], [0.5, 0.0]],
+        'Class 1': [[0.0, 0.2], [0.5, 0.1]]},
+    Number_of_servers=[1, 2],
+    Queue_capacities=[20, 'Inf'],
+    Priority_classes={
+        'Class 0': 1,
+        'Class 1': 0},
+    Class_change_matrices={
+        'Node 1': [[0.0, 1.0], [0.0, 1.0]],
+        'Node 2': [[0.8, 0.2], [0.0, 1.0]]}
+)
+\end{minted}
