@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{mwyaf} \PYG{o}{=} \PYG{l+m+mi}{1071}
+\PYG{n}{lleiaf} \PYG{o}{=} \PYG{l+m+mi}{462}
+\PYG{n}{ffactorau} \PYG{o}{=} \PYG{p}{[]}
+
+\PYG{c+c1}{\PYGZsh{} Algorithm Euclid}
+\PYG{k}{while} \PYG{n}{mwyaf} \PYG{o}{!=} \PYG{l+m+mi}{0} \PYG{o+ow}{and} \PYG{n}{lleiaf} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{:}
+  \PYG{n}{lluosrif} \PYG{o}{=} \PYG{l+m+mi}{0}
+  \PYG{k}{while} \PYG{n}{mwyaf} \PYG{o}{\PYGZgt{}=} \PYG{n}{lleiaf}\PYG{p}{:}
+    \PYG{n}{mwyaf} \PYG{o}{\PYGZhy{}=} \PYG{n}{lleiaf}
+    \PYG{n}{lluosrif} \PYG{o}{+=} \PYG{l+m+mi}{1}
+  \PYG{n}{mwyaf}\PYG{p}{,} \PYG{n}{lleiaf} \PYG{o}{=} \PYG{n}{lleiaf}\PYG{p}{,} \PYG{n}{mwyaf}
+  \PYG{c+c1}{\PYGZsh{} cyfnewid enwau\PYGZsq{}r newidynnau}
+  \PYG{n}{ffactorau}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{lluosrif}\PYG{p}{)}
+\PYG{n}{ffactorau}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{mwyaf}\PYG{p}{)}
+\PYG{n}{ffactorau}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{lleiaf}\PYG{p}{)}
+
+\PYG{k}{print}\PYG{p}{(}\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{ffactorau}\PYG{p}{))}
+\end{Verbatim}

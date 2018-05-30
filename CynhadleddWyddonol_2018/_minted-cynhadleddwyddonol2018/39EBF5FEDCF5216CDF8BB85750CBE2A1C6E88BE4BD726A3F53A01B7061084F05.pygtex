@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{assert} \PYG{n}{tynnu\PYGZus{}lluosrifau}\PYG{p}{(}\PYG{l+m+mi}{31}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{)} \PYG{o}{==} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{)}
+
+\PYG{k}{assert} \PYG{n}{ffactor\PYGZus{}mwyaf\PYGZus{}cyffredin}\PYG{p}{(}\PYG{l+m+mi}{1071}\PYG{p}{,} \PYG{l+m+mi}{462}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{21}
+\end{Verbatim}

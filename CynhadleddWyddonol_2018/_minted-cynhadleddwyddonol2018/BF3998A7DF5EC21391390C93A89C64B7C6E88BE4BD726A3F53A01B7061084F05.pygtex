@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{a} \PYG{o}{=} \PYG{l+m+mi}{1071}
+\PYG{n}{b} \PYG{o}{=} \PYG{l+m+mi}{462}
+\PYG{n}{C} \PYG{o}{=} \PYG{p}{[]}
+
+\PYG{k}{while} \PYG{n}{a} \PYG{o}{!=} \PYG{l+m+mi}{0} \PYG{o+ow}{and} \PYG{n}{b} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{:}
+  \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}
+  \PYG{k}{while} \PYG{n}{a} \PYG{o}{\PYGZgt{}=} \PYG{n}{b}\PYG{p}{:}
+    \PYG{n}{a} \PYG{o}{\PYGZhy{}=} \PYG{n}{b}
+    \PYG{n}{i} \PYG{o}{+=} \PYG{l+m+mi}{1}
+  \PYG{n}{a}\PYG{p}{,} \PYG{n}{b} \PYG{o}{=} \PYG{n}{b}\PYG{p}{,} \PYG{n}{a}
+  \PYG{n}{C}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
+\PYG{n}{C}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{a}\PYG{p}{)}
+\PYG{n}{C}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{b}\PYG{p}{)}
+
+\PYG{k}{print}\PYG{p}{(}\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{C}\PYG{p}{))}
+\end{Verbatim}

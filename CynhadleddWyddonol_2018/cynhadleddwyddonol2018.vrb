@@ -1,0 +1,5 @@
+\begin{minted}{python}
+assert tynnu_lluosrifau(31, 10) == (1, 10, 3)
+
+assert ffactor_mwyaf_cyffredin(1071, 462) == 21
+\end{minted}
