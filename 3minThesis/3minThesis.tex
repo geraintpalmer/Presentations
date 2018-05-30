@@ -1,0 +1,33 @@
+\documentclass[xcolor={table}]{beamer}
+\usetheme{Singapore}
+\usepackage[utf8]{inputenc}
+\usecolortheme{crane}
+\usepackage{graphicx}
+\usepackage{iwona}
+\usepackage{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes,snakes}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+\definecolor{lightblue}{RGB}{124,190,255}
+\definecolor{darkgreen}{RGB}{24,145,0}
+
+\beamertemplatenavigationsymbolsempty
+\setbeamerfont{caption}{size=\tiny}
+
+\begin{document}
+
+\begin{frame}
+    \frametitle{Queues, Queues, and... Deadlock!}
+    \begin{figure}
+    \includestandalone[width=\textwidth]{deadlock_digraph}
+    \end{figure}
+\end{frame}
+
+\end{document}
