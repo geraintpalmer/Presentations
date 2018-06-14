@@ -1,0 +1,70 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.text}
+
+\begin{document}
+\begin{tikzpicture}
+
+\draw[draw=none, fill=none] (-2.5, -3) rectangle (25, 12);
+
+\only<1, 2>{
+
+\node at (0, 8.25) {\Large{papur.pdf}};
+\node at (5, 8.25) {\Large{papur\_v2.pdf}};
+\node at (0, 3.25) {\Large{papur\_v3.pdf}};
+\node at (5, 3.25) {\Large{papur\_v3\_OLAF.pdf}};
+\node at (0, -1.75) {\Large{papur\_drafft\_ola.pdf}};
+\node at (5, -1.75) {\Large{papur\_drafft\_ola\_v2.pdf}};
+
+\node (1) at (0, 10) {\includegraphics[width=2.35cm]{emoji/paper}};
+\node (2) at (5, 10) {\includegraphics[width=2.35cm]{emoji/paper}};
+\node (3) at (0, 5) {\includegraphics[width=2.35cm]{emoji/paper}};
+\node (4) at (5, 5) {\includegraphics[width=2.35cm]{emoji/paper}};
+\node (5) at (0, 0) {\includegraphics[width=2.35cm]{emoji/paper}};
+\node (6) at (5, 0) {\includegraphics[width=2.35cm]{emoji/paper}};
+
+}
+
+\only<2, 3>{
+
+\draw (10, -3) rectangle (25, 11);
+\draw (13, -3) -- (13, 11);
+
+\draw (10, -1) -- (25, -1);
+\draw (10, 1) -- (25, 1);
+\draw (10, 3) -- (25, 3);
+\draw (10, 5) -- (25, 5);
+\draw (10, 7) -- (25, 7);
+\draw (10, 9) -- (25, 9);
+
+\node at (11.5, -2) {\Large\texttt{\#21}};
+\node at (11.5, 0) {\Large\texttt{\#22}};
+\node at (11.5, 2) {\Large\texttt{\#21}};
+\node at (11.5, 4) {\Large\texttt{\#24}};
+\node at (11.5, 6) {\Large\texttt{\#25}};
+\node at (11.5, 8) {\Large\texttt{\#30}};
+\node at (11.5, 10) {\Large\texttt{\#33}};
+
+\node[align=right, minimum width=5cm] at (19, -2) {\Large\texttt{"Ychwanegu lluniau ar gyfer Theorem 2"}};
+\node[align=right, minimum width=5cm] at (19, 0) {\Large\texttt{"Trwsio camsillafu yn y cyflwyniad"}};
+\node[align=right, minimum width=5cm] at (19, 2) {\Large\texttt{"Ail-ysgrifennu'r adolygiad llenyddiaeth"}};
+\node[align=right, minimum width=5cm] at (19, 4) {\Large\texttt{"Trwsio nifer o typos yn adran methodoleg"}};
+\node[align=right, minimum width=5cm] at (19, 6) {\Large\texttt{"Ail-enwi Theorem 3"}};
+\node[align=right, minimum width=5cm] at (19, 8) {\Large\texttt{"Trwsio typo yn y casgliad"}};
+\node[align=right, minimum width=5cm] at (19, 10) {\Large\texttt{"Drafft cyntaf wedi'i gorffen"}};
+
+}
+
+\only<3>{
+
+\node (1) at (2.5, 5) {\includegraphics[width=3.5cm]{emoji/paper}};
+\node at (2.5, 2.75) {\huge{papur.pdf}};
+
+}
+
+\end{tikzpicture}
+\end{document}

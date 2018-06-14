@@ -1,0 +1,37 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.text}
+
+\begin{document}
+
+\begin{tikzpicture}
+\def\upshift#1{\raisebox{1.5ex}}
+\def\downshift#1{\raisebox{-2.5ex}}
+
+\draw[ultra thick] (0, 0) circle (10);
+\coordinate (origin) at (0, 0);
+\draw[ultra thick] (origin) edge[bend left, postaction={decorate,decoration={text along path,text align=center,text={|\Huge\upshift|Data}}}] (60: 10);
+\draw[ultra thick] (180: 10) edge[bend right, postaction={decorate,decoration={text along path,text align=center,text={|\Huge\downshift|Canlyniadau}}}] (origin);
+\draw[ultra thick] (origin) edge[bend left, postaction={decorate,decoration={text along path,text align=center,text={|\Huge\upshift|Methodoleg}}}] (300: 10);
+
+\node at (50: 8) {\includegraphics[width=2.35cm]{emoji/telescope}};
+\node at (90: 8) {\includegraphics[width=2.35cm]{emoji/linedown}};
+\node at (130: 8) {\includegraphics[width=2.35cm]{emoji/floppy}};
+\node at (170: 8) {\includegraphics[width=2.35cm]{emoji/filing}};
+\node at (210: 8) {\includegraphics[width=2.35cm]{emoji/linechart}};
+\node at (250: 8) {\includegraphics[width=2.35cm]{emoji/paper}};
+\node at (290: 8) {\includegraphics[width=2.35cm]{emoji/barchart}};
+\node at (330: 8) {\includegraphics[width=2.35cm]{emoji/triangruler}};
+\node at (10: 8) {\includegraphics[width=2.35cm]{emoji/microscope}};
+
+\node at (10: 4) {\includegraphics[width=2.35cm]{emoji/computer}};
+\node at (130: 4) {\includegraphics[width=2.35cm]{emoji/filebox}};
+\node at (250: 4) {\includegraphics[width=2.35cm]{emoji/books}};
+
+\end{tikzpicture}
+
+\end{document}

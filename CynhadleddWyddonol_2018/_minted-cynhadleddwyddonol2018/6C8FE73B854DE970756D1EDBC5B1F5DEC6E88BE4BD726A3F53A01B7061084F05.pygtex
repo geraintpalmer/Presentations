@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{ffwythiant}\PYG{p}{(}\PYG{n}{mewnbwn}\PYG{p}{):}
+    \PYG{n}{allbwn} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{while} \PYG{n}{allbwn} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{6}\PYG{p}{:}
+        \PYG{n}{allbwn} \PYG{o}{+=} \PYG{n}{mewnbwn}
+    \PYG{k}{return} \PYG{n}{allbwn}
+\end{Verbatim}

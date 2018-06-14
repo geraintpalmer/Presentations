@@ -44,13 +44,19 @@
 \begin{document}
 
 \frame{\titlepage}
-
 \begin{frame}
-Pam ailgynhyrchiadwy?
+\frametitle{Ailgynhyrchadwyedd}
+\begin{center}
+  \textit{``Os gwelais ymhellach na rhai, yna gwnes hynny drwy sefyll ar ysgwyddau cewri o ddynion.''}\\
+  \vspace{0.75cm}
+  \small{SYR ISAAC NEWTON}
+\end{center}
 \end{frame}
 
 \begin{frame}
-Beth yw ymchwil?
+\begin{center}
+  \includestandalone[width=0.65\textwidth]{ymchwil}
+\end{center}
 \end{frame}
 
 \begin{frame}
@@ -65,15 +71,21 @@ Beth yw ymchwil?
 \end{frame}
 
 \begin{frame}
-Click, click, click
+\huge{
+  clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic clic
+}
 \end{frame}
 
 \begin{frame}
-Excel
+\begin{center}
+  \includegraphics[width=0.4\textwidth]{excellogo}
+\end{center}
 \end{frame}
 
-\begin{frame}
-Sgriptio
+\begin{frame}[fragile]
+\begin{center}
+  \includestandalone[width=\textwidth]{sgripto}
+\end{center}
 \end{frame}
 
 \section[]{Offerynnau agored}
@@ -83,11 +95,21 @@ Sgriptio
 \end{frame}
 
 \begin{frame}
-Trwyddedau
-\end{frame}
-
-\begin{frame}
-Ffynhonell agored
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \includegraphics[width=0.35\textwidth]{emoji/arian}\\
+        Trwyddedau
+      \end{center}
+    \end{column}
+    \pause
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \includegraphics[width=0.35\textwidth]{emoji/unlock}\\
+        Ffynhonell agored
+      \end{center}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \section[]{Ymarferion cod gorau}
@@ -104,12 +126,12 @@ b = 462
 C = []
 
 while a != 0 and b != 0:
-  i = 0
-  while a >= b:
-    a -= b
-    i += 1
-  a, b = b, a
-  C.append(i)
+    i = 0
+    while a >= b:
+        a -= b
+        i += 1
+    a, b = b, a
+    C.append(i)
 C.append(a)
 C.append(b)
 
@@ -127,13 +149,12 @@ ffactorau = []
 
 # Algorithm Euclid
 while mwyaf != 0 and lleiaf != 0:
-  lluosrif = 0
-  while mwyaf >= lleiaf:
-    mwyaf -= lleiaf
-    lluosrif += 1
-  mwyaf, lleiaf = lleiaf, mwyaf
-  # cyfnewid enwau'r newidynnau
-  ffactorau.append(lluosrif)
+    lluosrif = 0
+    while mwyaf >= lleiaf:
+        mwyaf -= lleiaf
+        lluosrif += 1
+    mwyaf, lleiaf = lleiaf, mwyaf  # cyfnewid enwau'r newidynnau
+    ffactorau.append(lluosrif)
 ffactorau.append(mwyaf)
 ffactorau.append(lleiaf)
 
@@ -155,7 +176,7 @@ def tynnu_lluosrifau(mwyaf, lleiaf):
         lluosrif += 1
     return mwyaf, lleiaf, lluosrif
 
-def ffactor_mwyaf_cyffredin(mwyaf, lleiaf):
+def ffactor_cyffredin_mwyaf(mwyaf, lleiaf):
     """
     Algorithm Euclid y canfod ffactor mwyaf cyffredin dau rhif
     """
@@ -167,7 +188,7 @@ def ffactor_mwyaf_cyffredin(mwyaf, lleiaf):
     ffactorau.append(lleiaf)
     return max(ffactorau)
 
-print(ffactor_mwyaf_cyffredin(1071, 462))
+print(ffactor_cyffredin_mwyaf(1071, 462))
 \end{minted}
 }
 \end{frame}
@@ -176,7 +197,7 @@ print(ffactor_mwyaf_cyffredin(1071, 462))
 \begin{minted}{python}
 assert tynnu_lluosrifau(31, 10) == (1, 10, 3)
 
-assert ffactor_mwyaf_cyffredin(1071, 462) == 21
+assert ffactor_cyffredin_mwyaf(1071, 462) == 21
 \end{minted}
 \end{frame}
 
@@ -194,10 +215,17 @@ assert ffactor_mwyaf_cyffredin(1071, 462) == 21
 \end{frame}
 
 \begin{frame}
-VC?
+\includestandalone[width=\textwidth]{rheolaeth_fersiwn}
 \end{frame}
 
 \begin{frame}
-Adnoddau Cymraeg i'w ddod.
+\frametitle{Adnoddau Cyfrwng Cymraeg}
+\begin{center}
+\huge{...ar y ffordd.}\\
+\vspace{1cm}
+\includegraphics[height=2cm]{ccclogo}\\
+\vspace{1cm}
+\small{\textcolor{darkorange}{@GeraintPalmer}}
+\end{center}
 \end{frame}
 \end{document}

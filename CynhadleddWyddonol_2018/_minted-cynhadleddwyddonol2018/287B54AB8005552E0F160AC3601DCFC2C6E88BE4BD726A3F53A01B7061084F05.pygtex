@@ -9,7 +9,7 @@
         \PYG{n}{lluosrif} \PYG{o}{+=} \PYG{l+m+mi}{1}
     \PYG{k}{return} \PYG{n}{mwyaf}\PYG{p}{,} \PYG{n}{lleiaf}\PYG{p}{,} \PYG{n}{lluosrif}
 
-\PYG{k}{def} \PYG{n+nf}{ffactor\PYGZus{}mwyaf\PYGZus{}cyffredin}\PYG{p}{(}\PYG{n}{mwyaf}\PYG{p}{,} \PYG{n}{lleiaf}\PYG{p}{):}
+\PYG{k}{def} \PYG{n+nf}{ffactor\PYGZus{}cyffredin\PYGZus{}mwyaf}\PYG{p}{(}\PYG{n}{mwyaf}\PYG{p}{,} \PYG{n}{lleiaf}\PYG{p}{):}
     \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
 \PYG{l+s+sd}{    Algorithm Euclid y canfod ffactor mwyaf cyffredin dau rhif}
 \PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
@@ -21,5 +21,5 @@
     \PYG{n}{ffactorau}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{lleiaf}\PYG{p}{)}
     \PYG{k}{return} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{ffactorau}\PYG{p}{)}
 
-\PYG{k}{print}\PYG{p}{(}\PYG{n}{ffactor\PYGZus{}mwyaf\PYGZus{}cyffredin}\PYG{p}{(}\PYG{l+m+mi}{1071}\PYG{p}{,} \PYG{l+m+mi}{462}\PYG{p}{))}
+\PYG{k}{print}\PYG{p}{(}\PYG{n}{ffactor\PYGZus{}cyffredin\PYGZus{}mwyaf}\PYG{p}{(}\PYG{l+m+mi}{1071}\PYG{p}{,} \PYG{l+m+mi}{462}\PYG{p}{))}
 \end{Verbatim}

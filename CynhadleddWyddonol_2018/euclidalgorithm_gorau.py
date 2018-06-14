@@ -8,7 +8,7 @@ def tynnu_lluosrifau(mwyaf, lleiaf):
         lluosrif += 1
     return mwyaf, lleiaf, lluosrif
 
-def ffactor_mwyaf_cyffredin(mwyaf, lleiaf):
+def ffactor_cyffredin_mwyaf(mwyaf, lleiaf):
     """
     Algorithm Euclid y canfod ffactor mwyaf cyffredin dau rhif
     """
@@ -20,4 +20,4 @@ def ffactor_mwyaf_cyffredin(mwyaf, lleiaf):
     ffactorau.append(lleiaf)
     return max(ffactorau)
 
-print(ffactor_mwyaf_cyffredin(1071, 462))
+print(ffactor_cyffredin_mwyaf(1071, 462))
