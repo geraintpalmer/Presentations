@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{Q}
+\PYG{n}{Simulation}
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{Q}\PYG{o}{.}\PYG{n}{nodes}
+\PYG{p}{[}\PYG{n}{Arrival} \PYG{n}{Node}\PYG{p}{,} \PYG{n}{Node} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{Exit} \PYG{n}{Node}\PYG{p}{]}
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{Q}\PYG{o}{.}\PYG{n}{nodes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{all\PYGZus{}individuals}
+\PYG{p}{[}\PYG{n}{Individual} \PYG{l+m+mi}{1941}\PYG{p}{,} \PYG{n}{Individual} \PYG{l+m+mi}{1942}\PYG{p}{,} \PYG{o}{...}
+\PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{Q}\PYG{o}{.}\PYG{n}{nodes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{all\PYGZus{}individuals}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{service\PYGZus{}time}
+\PYG{l+m+mf}{0.8900655260040934}
+\end{Verbatim}

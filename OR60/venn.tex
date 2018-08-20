@@ -1,0 +1,24 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.text}
+
+\begin{document}
+\begin{tikzpicture}
+
+\draw[line width=1.5mm, draw=textorange, fill=textorange, fill opacity=0.1] (0, -5) circle (9);
+\draw[line width=1.5mm, draw=ciwyellow, fill=ciwyellow, fill opacity=0.1] (-4.33, 2.5) circle (9);
+\draw[line width=1.5mm, draw=mplblue, fill=mplblue, fill opacity=0.1] (4.33, 2.5) circle (9);
+
+\draw[rotate around={-110:(0, -5)}, draw=none, fill=none, postaction={decorate, decoration={raise=7pt, text along path, text={|\large\color{textorange}|EXTENDIBLE}}}] (0, -5) circle (9);
+\draw[rotate around={-170:(-4.33, 2.5)}, draw=none, fill=none, postaction={decorate, decoration={raise=7pt, text along path, text={|\large\color{ciwyellow}|READABLE}}}] (-4.33, 2.5) circle (9);
+\draw[rotate around={-30:(4.33, 2.5)}, draw=none, fill=none, postaction={decorate, decoration={raise=7pt, text along path, text={|\large\color{mplblue}|MODULAR}}}] (4.33, 2.5) circle (9);
+
+
+\node at (0, 0) {\large{Python}};
+\node at (0, 6) {\large{Best Practices}};
+\node at (-5.5, -4) {\large{Documentation}};
+\node at (0, -9) {\large{Open-source}};
+
+\end{tikzpicture}
+\end{document}

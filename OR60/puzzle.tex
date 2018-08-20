@@ -1,0 +1,18 @@
+\documentclass[tikz,border=3.14mm]{standalone}
+\begin{document}
+\tikzset{pics/.cd,
+  jigsaw/.style={
+    code={
+\fill[#1] (-2,-0.35) to[out=90,in=135] (-1.5,-0.45) arc(-135:135:0.6 and
+{0.45*sqrt(2)}) to[out=-135,in=-90] (-2,0.35) |- (-0.35,2)
+to[out=0,in=-45] (-0.45,2.5) arc(225:-45:{0.45*sqrt(2)} and 0.6)
+to[out=-135,in=180] (0.35,2) -| (2,0.35) 
+to[out=-90,in=225] (2.5,0.45) arc(135:-135:0.6 and {0.45*sqrt(2)})
+to[out=135,in=90] (2,-0.35) |- (0.35,-2)
+to[out=180,in=-135] (0.45,-1.5) arc(-45:225:{0.45*sqrt(2)} and 0.6) 
+to[out=-45,in=0] (-0.35,-2) -| cycle;
+}}}
+\begin{tikzpicture}
+\draw (-2,-2) pic[rotate=0]{jigsaw=mplblue} (2,2) pic[rotate=70]{jigsaw=mplblue!50};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,44 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{decorations.text}
+
+\begin{document}
+\begin{tikzpicture}
+
+\draw[draw=none, fill=none] (-10, -8) rectangle (10, 8);
+
+  \begin{scope}
+    \clip \bestpractice;
+    \clip \documentation;
+    \draw[fill=ciwyellow, fill opacity=1] \python;
+  \end{scope}
+
+  \begin{scope}[even odd rule]
+    \clip \python;
+    \clip \bestpractice;
+    \draw[fill=mplblue, fill opacity=1] \bestpractice \documentation;
+  \end{scope}
+
+    \begin{scope}
+    \clip \opensource;
+    \clip \documentation;
+    \draw[fill=textorange, fill opacity=1] \python;
+  \end{scope}
+
+  \draw[ultra thick, dashed] \bestpractice;
+  \draw[ultra thick] \documentation;
+  \draw[ultra thick, dashdotted] \python;
+  \draw[ultra thick, dotted] \opensource;
+
+\draw[draw=none, fill=none, postaction={decorate, decoration={raise=5pt, text along path, text={|\footnotesize|BEST PRACTICES}}}] (-5, 0) [partial ellipse=205:140:4 and 6.4];
+\draw[draw=none, fill=none, postaction={decorate, decoration={raise=5pt, text along path, text={|\footnotesize|PYTHON}}}] (0, 2) [partial ellipse=100:75:7.4 and 4];
+\draw[draw=none, fill=none, postaction={decorate, decoration={raise=5pt, text along path, text={|\footnotesize|DOCUMENTATION}}}] (0, -2) [partial ellipse=-110:-60:7.4 and 4];
+\draw[draw=none, fill=none, postaction={decorate, decoration={raise=5pt, text along path, text={|\footnotesize|OPEN SOURCE}}}] (5, 0) [partial ellipse=20:-25:4 and 6.4];
+
+
+\node[text=white] at (-3.2, 0) {\footnotesize{\textbf{READABLE}}};
+\node[text=white] at (-3.7, 3) {\footnotesize{\textbf{MODULAR}}};
+\node[text=white] at (3.2, 0) {\footnotesize{\textbf{EXTENDIBLE}}};
+
+\end{tikzpicture}
+\end{document}

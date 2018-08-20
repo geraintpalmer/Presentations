@@ -1,0 +1,65 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes,snakes}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\node[align=center] (simulation) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=textorange!40!white,text=black,shape=ellipse,fill opacity=1, text opacity=1}] at (0, 0) {\small Simulation};
+
+\node[align=center] (nodes) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=textorange!40!white,text=black,shape=ellipse,fill opacity=1, text opacity=1}] at (7.5, 3.75) {\small Nodes};
+
+\node[align=center] (arrivalnode) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=textorange!40!white,text=black,shape=ellipse,fill opacity=1, text opacity=1}] at (7.5, 0) {\small Arrival Node};
+
+\node[align=center] (exitnode) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=textorange!40!white,text=black,shape=ellipse,fill opacity=1, text opacity=1}] at (7.5, -3.75) {\small Exit Node};
+
+\node[align=center] (servers) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=textorange!40!white,text=black,shape=ellipse,fill opacity=1, text opacity=1}] at (14, 1.875) {\small Servers};
+
+\node[align=center] (individuals) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=textorange!40!white,text=black,shape=ellipse,fill opacity=1, text opacity=1}] at (14, -1.875) {\small Individuals};
+
+\node[align=center] (network) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=ciwyellow!40!white,text=black,shape=ellipse,fill opacity=1, text opacity=1}] at (-7.5, 1.875) {\small Network};
+
+\node[align=center] (servicecentre) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=ciwyellow!40!white,text=black,shape=ellipse,fill opacity=1, text opacity=1}] at (-14, 3.75) {\small Service Centre};
+
+\node[align=center] (customerclass) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=ciwyellow!40!white,text=black,shape=ellipse,fill opacity=1, text opacity=1}] at (-14, 0) {\small Customer Class};
+
+\node[align=center] (detector) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=mplblue!40!white,text=black,shape=ellipse,fill opacity=1, text opacity=1}] at (-3.75, -3.5) {\small Deadlock Detector};
+
+\node[align=center] (tracker) [style={minimum height=1.5cm, minimum width=3.5cm, draw=black,fill=mplblue!40!white,text=black,shape=ellipse,fill opacity=1, text opacity=1}] at (-7.5, -1.875) {\small State Tracker};
+
+\draw (17.75, -1.5) rectangle (24, 2);
+\draw[fill=textorange!40!white, fill opacity=1] (18.75, 1) rectangle (20.2, 1.5);
+\draw[fill=ciwyellow!40!white, fill opacity=1] (18.75, 0) rectangle (20.2, 0.5);
+\draw[fill=mplblue!40!white, fill opacity=1] (18.75, -1) rectangle (20.2, -0.5);
+\node[align=left] at (21.1, 1.25) {\small Core};
+\node[align=left] at (21.2, 0.25) {\small Input};
+\node[align=left] at (21.6, -0.75) {\small Optional};
+
+\draw (servers) edge[ultra thick,-triangle 90,out=-65,in=65] (individuals);
+\draw (individuals) edge[ultra thick,-triangle 90,out=115,in=-115] (servers);
+\draw (servers) edge[ultra thick,-triangle 90,out=135,in=0] (nodes);
+\draw (individuals) edge[ultra thick,-triangle 90] (nodes);
+\draw (individuals) edge[ultra thick,-triangle 90,out=180,in=-45] (arrivalnode);
+\draw (individuals) edge[ultra thick,-triangle 90,out=-135,in=0] (exitnode);
+\draw (nodes) edge[ultra thick,-triangle 90,out=-180,in=75] (simulation);
+\draw (arrivalnode) edge[ultra thick,-triangle 90] (simulation);
+\draw (exitnode) edge[ultra thick,-triangle 90,out=180,in=-75] (simulation);
+
+\draw (network) edge[ultra thick,-triangle 90, out=0, in=150] (simulation);
+\draw (servicecentre) edge[ultra thick,-triangle 90,out=0,in=135] (network);
+\draw (customerclass) edge[ultra thick,-triangle 90,out=0,in=-135] (network);
+
+\draw (tracker) edge[ultra thick,-triangle 90,out=45,in=180] (simulation);
+\draw (detector) edge[ultra thick,-triangle 90] (simulation);
+
+\draw[draw=gray] (customerclass) edge[ultra thick, dashed] (servicecentre);
+
+
+\end{tikzpicture}
+
+\end{document}
