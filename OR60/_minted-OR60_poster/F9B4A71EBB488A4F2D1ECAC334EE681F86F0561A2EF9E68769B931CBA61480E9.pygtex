@@ -12,5 +12,5 @@
 \PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{recs} \PYG{o}{=} \PYG{n}{Q}\PYG{o}{.}\PYG{n}{get\PYGZus{}all\PYGZus{}records}\PYG{p}{()}
 \PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n}{waits} \PYG{o}{=} \PYG{p}{[}\PYG{n}{r}\PYG{o}{.}\PYG{n}{waiting\PYGZus{}time} \PYG{k}{for} \PYG{n}{r} \PYG{o+ow}{in} \PYG{n}{recs} \PYG{k}{if} \PYG{n}{r}\PYG{o}{.}\PYG{n}{arrival\PYGZus{}date} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{50}\PYG{p}{]}
 \PYG{o}{\PYGZgt{}\PYGZgt{}\PYGZgt{}} \PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{waits}\PYG{p}{)} \PYG{o}{/} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{waits}\PYG{p}{)}
-\PYG{l+m+mf}{0.37964995294468035}
+\PYG{l+m+mf}{0.3796}\PYG{o}{...}
 \end{Verbatim}

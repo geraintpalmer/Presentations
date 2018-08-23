@@ -30,6 +30,8 @@
 \definecolor{nowhere}{HTML}{42B929}
 \definecolor{everywhere}{HTML}{cd2d89}
 
+\setlength{\fboxrule}{2pt}
+
 \setbeamercolor{structure}{fg=textorange}
 
 \tikzset{
@@ -64,7 +66,7 @@
     \begin{center}
       \vspace{3mm}
       \textcolor{textgrey}{\huge{CIW: AN OPEN-SOURCE DISCRETE-\\[5mm]EVENT-SIMULATION LIBRARY}}\\[10mm]
-      \textcolor{textorange}{\LARGE{G.I. Palmer, P.R. Harper, V.A. Knight, \& A.L. Hawa}}
+      \textcolor{textorange}{\LARGE{G.I. Palmer, V.A. Knight, P.R. Harper \& A.L. Hawa}}
       \vspace{5mm}
     \end{center}
   \end{column}
@@ -83,13 +85,14 @@
 \textcolor{textgrey}{\hrule height 3pt}
 
 \vspace{5mm}
-
 Reproducibility is the ``cornerstone of cumulative science''
 (\textcolor{textorange}{Sandve et al. (2013)}), but many simulation software
 fail in this aspect.
 In \textcolor{textorange}{Kilgore (2001)} three properties of simualtion
 software are identified as being vital for reproducibility:
-\textit{readability}, \textit{modularity} and \textit{extendibility}.
+\tcbox[boxrule=2pt, tcbox raise base, boxsep=-1mm, colback=ciwyellow!20, colframe=ciwyellow, arc=2mm, auto outer arc, nobeforeafter]{\textit{\!readability\!}},
+\tcbox[boxrule=2pt, tcbox raise base, boxsep=-1mm, colback=mplblue!20, colframe=mplblue, arc=2mm, auto outer arc, nobeforeafter]{\textit{\!modularity\!}} and
+\tcbox[boxrule=2pt, tcbox raise base, boxsep=-1mm, colback=textorange!20, colframe=textorange, arc=2mm, auto outer arc, nobeforeafter]{\textit{\!extendibility\!}}.
 Ciw strives to accompish this:
 
 \begin{columns}
@@ -124,7 +127,7 @@ Ciw strives to accompish this:
 \begin{column}{0.5\textwidth}
   \begin{center}
   \begin{minipage}[c]{0.9\textwidth}
-    \begin{tcolorbox}[colback=ciwyellow!15,colframe=ciwyellow, title=\small{READABLE}, coltitle=white, halign title=right]
+    \begin{tcolorbox}[boxrule=2pt, colback=ciwyellow!15,colframe=ciwyellow, title=\small{READABLE}, coltitle=white, halign title=right]
       \begin{center}
         \small{
           \begin{minted}{python}
@@ -141,13 +144,13 @@ Ciw strives to accompish this:
 >>> recs = Q.get_all_records()
 >>> waits = [r.waiting_time for r in recs if r.arrival_date > 50]
 >>> sum(waits) / len(waits)
-0.37964995294468035
+0.3796...
           \end{minted}
         }
       \end{center}
     \end{tcolorbox}
     \vspace{10mm}
-    \begin{tcolorbox}[colback=mplblue!15,colframe=mplblue, title=\small{MODULAR}, coltitle=white, halign title=right]
+    \begin{tcolorbox}[boxrule=2pt, colback=mplblue!15,colframe=mplblue, title=\small{MODULAR}, coltitle=white, halign title=right]
           \begin{center}
             \includestandalone[width=\textwidth]{codestructure}
           \end{center}
@@ -165,7 +168,7 @@ Simulation
           }
     \end{tcolorbox}
     \vspace{10mm}
-    \begin{tcolorbox}[colback=textorange!15,colframe=textorange, title=\small{EXTENDIBLE}, coltitle=white, halign title=right]
+    \begin{tcolorbox}[boxrule=2pt, colback=textorange!15,colframe=textorange, title=\small{EXTENDIBLE}, coltitle=white, halign title=right]
     \begin{columns}
     \hspace{0.02\textwidth}
     \begin{column}{0.32\textwidth}
@@ -213,13 +216,13 @@ Simulation
   \textbullet\ Stay Well Plans (SWPs) offered to older people in Gwent.\\[2mm]
   \textbullet\ Ciw simulations used to evaluate their effects on system demand.\\[2mm]
   \textbullet\ Three scenarios compared:\\[0.5mm]
-  \begin{tcolorbox}[colback=nowhere!15,colframe=nowhere]
+  \begin{tcolorbox}[boxrule=2pt, colback=nowhere!15,colframe=nowhere]
       SWPs not offered in Gwent.
   \end{tcolorbox}
-  \begin{tcolorbox}[colback=newport!15,colframe=newport]
+  \begin{tcolorbox}[boxrule=2pt, colback=newport!15,colframe=newport]
       SWPs offered in Newport county only.
   \end{tcolorbox}
-  \begin{tcolorbox}[colback=everywhere!15,colframe=everywhere]
+  \begin{tcolorbox}[boxrule=2pt, colback=everywhere!15,colframe=everywhere]
       SWPs offered in all counties of Gwent.
   \end{tcolorbox}
   \textbullet\ Inconsequential increases in demand at secondary care.\\[2mm]
