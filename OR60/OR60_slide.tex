@@ -1,0 +1,58 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{standalone}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{minted}
+\usepackage{multicol}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{patterns,snakes}
+\usetikzlibrary{positioning}
+
+\definecolor{textgrey}{HTML}{586e75}
+\definecolor{textorange}{HTML}{cc5200}
+\definecolor{ciwyellow}{HTML}{fbbe28}
+\definecolor{mplblue}{HTML}{1339cd}
+\definecolor{cream}{HTML}{fefff4}
+\definecolor{newport}{HTML}{41B6af}
+\definecolor{nowhere}{HTML}{42B929}
+\definecolor{everywhere}{HTML}{cd2d89}
+
+\usemintedstyle{trac}
+
+\beamertemplatenavigationsymbolsempty
+
+\begin{document}
+
+\begin{frame}
+\frametitle{\textcolor{textgrey}{CIW: AN OPEN-SOURCE DISCRETE-EVENT- SIMULATION LIBRARY}\\\small{\textcolor{textorange}{G.I. Palmer, V.A. Knight, P.R. Harper \& A.L. Hawa}}}
+\begin{columns}
+  \begin{column}{0.4\textwidth}
+        \begin{tcolorbox}[boxrule=10pt, colback=ciwyellow,colframe=ciwyellow]
+        \textcolor{white}{\large{\textbf{READABLE}}}
+        \end{tcolorbox}
+        \begin{tcolorbox}[boxrule=10pt, colback=mplblue,colframe=mplblue]
+        \textcolor{white}{\large{\textbf{MODULAR}}}
+        \end{tcolorbox}
+        \begin{tcolorbox}[boxrule=10pt, colback=textorange,colframe=textorange]
+        \textcolor{white}{\large{\textbf{EXTENDIBLE}}}
+        \end{tcolorbox}
+  \end{column}
+  \begin{column}{0.6\textwidth}
+  \includestandalone[width=\textwidth]{ophcn_map_slide}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\end{document}
