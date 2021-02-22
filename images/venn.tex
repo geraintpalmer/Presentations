@@ -1,0 +1,17 @@
+\def\firstellip{(1.6, 0) ellipse [x radius=3cm, y radius=1.5cm, rotate=50]}
+\def\secondellip{(0.3, 1cm) ellipse [x radius=3cm, y radius=1.5cm, rotate=50]}
+\def\thirdellip{(-1.6, 0) ellipse [x radius=3cm, y radius=1.5cm, rotate=-50]}
+\def\fourthellip{(-0.3, 1cm) ellipse [x radius=3cm, y radius=1.5cm, rotate=-50]}
+
+
+\begin{tikzpicture}
+    \draw[ultra thick, draw=textorange, fill=textorange, fill opacity=0.2] \firstellip node [label={[xshift=2.0cm, yshift=-0.9cm]}] {};
+    \draw[ultra thick, draw=mplblue, fill=mplblue, fill opacity=0.2] \secondellip node [label={[xshift=2.2cm, yshift=2.1cm]}] {};
+    \draw[ultra thick, draw=darkgreen, fill=darkgreen, fill opacity=0.2] \thirdellip node [label={[xshift=-2.0cm, yshift=-0.9cm]}] {};
+    \draw[ultra thick, draw=ciwyellow, fill=ciwyellow, fill opacity=0.2] \fourthellip node [label={[xshift=-2.2cm, yshift=2.1cm]}] {};
+
+    \node[text=ciwyellow] at (-2.5, 4) {\LARGE \bf Understanding};
+    \node[text=mplblue] at (2.5, 4) {\LARGE \bf Optimisation};
+    \node[text=darkgreen] at (-3.7, -2.2) {\LARGE \bf Communication};
+    \node[text=textorange] at (3.7, -2.2) {\LARGE \bf Education};
+\end{tikzpicture}
