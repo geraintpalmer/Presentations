@@ -30,6 +30,7 @@
 \setbeamerfont{caption}{size=\tiny}
 
 \title{Open-Source Simulation with Ciw}
+\subtitle{``Modelling Deadlock in Queueing Systems''}
 \author{Dr Geraint Palmer\\Supervisors: Prof Paul Harper \& Dr Vince Knight\\\textcolor{textorange}{www.geraintianpalmer.org.uk}\\\textcolor{textorange}{@GeraintPalmer} \vspace{-5mm}}
 \date{Beale Lecture, February 2021}
 \titlegraphic{\includegraphics[width=2.5cm]{../cflogo.pdf}}
@@ -37,39 +38,9 @@
 \begin{document}
 \frame{\titlepage}
 
-\begin{frame}
-\begin{itemize}
-  \item Reproducibility in simulation
-  \item Detecting deadlock
-  \item Extending Ciw
-  \item Applications of Ciw
-\end{itemize}
-\end{frame}
 
 \begin{frame}
 \frametitle{Reproducibility}
-
-\vfill
-
-\begin{itemize}
-  \item $R^1$: Re-runnable
-  \item $R^2$: Repeatable
-  \item $R^3$: Reproducible
-  \item $R^4$: Reusable
-\end{itemize}
-
-\vfill
-
-\scriptsize{\textcolor{textorange}{2018. \textit{Benureau, FCY., ac Rougier, NP.}. \textbf{Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions}. Frontiers in neuroinformatics.}}
-\end{frame}
-
-
-\begin{frame}
-\scriptsize{\textcolor{textorange}{$\bullet$ 2013. \textit{Sandve, GK., et al.}, \textbf{Ten simple rules for reproducible computational research}. PLoS Comput Biol 9(10)}}\\
-\scriptsize{\textcolor{textorange}{$\bullet$ 2014. \textit{Wilson, G., et al.}, \textbf{Best practices for scientific computing}. PLoS Biol 21(1)}}
-
-\vspace{1mm}
-
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \large{
@@ -84,28 +55,27 @@
 }
 \end{column}
 \begin{column}{0.5\textwidth}
-\onslide<2>{
-\begin{tcolorbox}[colback=ciwyellow!20, colframe=ciwyellow, height=1.7cm, valign=center]
+\begin{tcolorbox}[colback=ciwyellow!20, colframe=ciwyellow, height=1.5cm, valign=center]
 \centering
 \LARGE{Readable}
 \end{tcolorbox}
-\begin{tcolorbox}[colback=mplblue!20, colframe=mplblue, height=1.7cm, valign=center]
+\begin{tcolorbox}[colback=mplblue!20, colframe=mplblue, height=1.5cm, valign=center]
 \centering
 \LARGE{Modular}
 \end{tcolorbox}
-\begin{tcolorbox}[colback=textorange!20, colframe=textorange, height=1.7cm, valign=center]
+\begin{tcolorbox}[colback=textorange!20, colframe=textorange, height=1.5cm, valign=center]
 \centering
 \LARGE{Extendible}
 \end{tcolorbox}
-}
 \end{column}
 \end{columns}
 
 \vspace{2mm}
 
-\onslide<2>{
-\scriptsize{\textcolor{textorange}{2001. \textit{Kilgore, RA.}. \textbf{Open source simulation modeling language (sml)}. In Proceedings of the 33nd conference on Winter simulation (pp. 607–613).}}
-}
+\tiny{\textcolor{textorange}{$\bullet$ 2018. \textit{Benureau, FCY., ac Rougier, NP.}. \textbf{Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions}. Frontiers in neuroinformatics.}}\\
+\tiny{\textcolor{textorange}{$\bullet$ 2013. \textit{Sandve, GK., et al.}, \textbf{Ten simple rules for reproducible computational research}. PLoS Comput Biol 9(10)}}\\
+\tiny{\textcolor{textorange}{$\bullet$ 2014. \textit{Wilson, G., et al.}, \textbf{Best practices for scientific computing}. PLoS Biol 21(1)}}\\
+\tiny{\textcolor{textorange}{$\bullet$ 2001. \textit{Kilgore, RA.}. \textbf{Open source simulation modeling language (sml)}. In Proceedings of the 33nd conference on Winter simulation (pp. 607–613).}}
 \end{frame}
 
 
@@ -158,6 +128,11 @@
 \end{frame}
 
 \begin{frame}
+\centering
+\includestandalone[width=0.85\textwidth]{../images/markov_chain_feedback}
+\end{frame}
+
+\begin{frame}
     \frametitle{Times to Deadlock}
     \centering
     \includegraphics[width=0.45\textwidth]{../images/varyL_1Nms}
@@ -172,8 +147,9 @@
 
 \begin{frame}
 \begin{center}
-\includestandalone[width=0.9\textwidth]{../images/hs-diagram}
+\includestandalone[width=0.8\textwidth]{../images/hs-diagram}
 \end{center}
+\scriptsize{\textcolor{textorange}{\textit{Palmer, GI. and Tian, Y.}. \textbf{Two Approaches for Implementing Integrated DES+SD Hybrid Simulation in an Open Framework}. Paper under review.}}
 \end{frame}
 
 \begin{frame}
@@ -185,8 +161,9 @@
 \begin{frame}
 \frametitle{Applications of Ciw}
 \begin{center}
-\includestandalone[width=\textwidth]{../images/venn}
+\includestandalone[width=0.9\textwidth]{../images/venn}
 \end{center}
+\scriptsize{\textcolor{textorange}{\textit{Palmer, GI., Harper, PR., Knight, VA. and Brooks, C.}. \textbf{Modelling changes in healthcare demand through geographic data extrapolation}. Revised paper under review.}}
 \end{frame}
 
 \frame{\titlepage}
